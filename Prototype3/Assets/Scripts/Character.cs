@@ -134,7 +134,7 @@ public class Character : MonoBehaviour
             {
                 if (TurnManager.GetCurrTurnCharacter() != this.gameObject)
                 {
-                    this.GetComponent<SpriteRenderer>().color = Color.red;
+                    //this.GetComponent<SpriteRenderer>().color = Color.red;
                 }
             }
         }
@@ -152,7 +152,7 @@ public class Character : MonoBehaviour
                     {
                         if (!DiceManager.GetCurrTargets().Contains(this.gameObject.GetComponent<Character>()))
                         {
-                            this.GetComponent<SpriteRenderer>().color = Color.white;
+                            //this.GetComponent<SpriteRenderer>().color = Color.white;
                         }
                     }
                 }

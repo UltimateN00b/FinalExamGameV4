@@ -56,14 +56,21 @@ public class ConfirmAttackButton : MonoBehaviour
                 {
                     foreach (Character c in targets)
                     {
+                        //Manage damage animations
+                        if (c.tag.Contains("Player"))
+                        {
+                            GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("takingDamage", true);
+                        }
+
+                        //Manage particle effects
                         AudioManager.PlaySound(Resources.Load("Explosions") as AudioClip);
 
                         GameObject effectsAnimator = Utilities.SearchChild("EffectsAnimator", c.gameObject);
                         effectsAnimator.GetComponent<SpriteRenderer>().enabled = true;
                         effectsAnimator.GetComponent<Animator>().enabled = true;
                     }
-
                     _hasMovedToAttackPos = true;
+
                 }
             }
             else if (!_hasPlayedAttackAnim)
@@ -131,6 +138,12 @@ public class ConfirmAttackButton : MonoBehaviour
             DiceManager.CurrCombatStage = DiceManager.CombatStage.ExecutingAttack;
 
             GameObject diceCanvas = GameObject.Find("DiceCanvas");
+
+            //Manage attack animations
+            if (TurnManager.GetCurrTurnCharacter().tag.Contains("Player"))
+            {
+                GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("attack", true);
+            }
         }
     }
 

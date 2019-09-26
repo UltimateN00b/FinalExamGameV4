@@ -124,14 +124,14 @@ public class DiceManager : MonoBehaviour
         foreach (Character c in DiceManager.GetCurrTargets())
         {
             Debug.Log(c.name);
-            c.GetComponent<SpriteRenderer>().color = Color.red;
+            //c.GetComponent<SpriteRenderer>().color = Color.red;
         }
 
     }
 
     public static void AddTarget(Character target)
     {
-        target.GetComponent<SpriteRenderer>().color = Color.red;
+       // target.GetComponent<SpriteRenderer>().color = Color.red;
         _currTargets.Add(target);
     }
 
@@ -139,7 +139,7 @@ public class DiceManager : MonoBehaviour
     {
         foreach (Character c in _currTargets)
         {
-            c.GetComponent<SpriteRenderer>().color = Color.white;
+            //c.GetComponent<SpriteRenderer>().color = Color.white;
         }
 
         _currTargets = new List<Character>();
@@ -167,8 +167,15 @@ public class DiceManager : MonoBehaviour
                     healthBarChar.GetComponent<HealthBar>().ChangeHealth(Mathf.Abs(excess));
                 }
 
-
                 healthBar.GetComponent<HealthBar>().ChangeHealth(-damage);
+
+                if (c.GetComponent<Character>().GetCurrHP() <= 0)
+                {
+                    if (c.tag.Contains("Player"))
+                    {
+                        GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("dying", true);
+                    }
+                }
             }
         }
     }
@@ -306,7 +313,7 @@ public class DiceManager : MonoBehaviour
                 if (!currChild.GetComponent<Dice>().IsParalysed())
                 {
                     currChild.GetComponent<Button>().enabled = true;
-                    currChild.GetComponent<Image>().color = Color.white;
+                    //currChild.GetComponent<Image>().color = Color.white;
                     //currChild.GetComponent<ShakeObject>().Shake();
                     string questionMarkName = "QuestionMark" + currChild.name.ToCharArray()[currChild.name.Length - 1];
                     GameObject.Find(questionMarkName).GetComponent<Image>().enabled = true;

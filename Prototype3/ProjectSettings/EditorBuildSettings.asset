@@ -9,6 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: de40af7c87668ec4f9fa55f1dcd9729d
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/OpeningCutscene.unity
+    guid: b28f78c88afe4904da2ae0f7613a0bf9
+  - enabled: 1
+    path: Assets/Scenes/Instructions/CombatInstructions.unity
+    guid: cb92555d25beed644bd0a738e0ec80fb
+  - enabled: 1
+    path: Assets/Scenes/NightmareTutorial.unity
+    guid: 76394ba634cbbf74488bb2c7f96c6d49
+  - enabled: 1
+    path: Assets/Scenes/Instructions/SleepMeterInstructions.unity
+    guid: 72514fef3c54f694e80387b24a7dfb29
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/WakeUpNarrative.unity
+    guid: 0149d1422bee67c47b4f2a5e2c3a7dd9
+  - enabled: 1
     path: Assets/Scenes/AASBNarrativeScene Test Scene 1.unity
     guid: 60ab30118e65fed4aaf7e510031a2d5d
   - enabled: 1
@@ -17,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PreBattleScenes/PB_Segment1.unity
     guid: 5cf6696c2f50dba4188dd61077dc0e43
+  - enabled: 1
+    path: Assets/Scenes/Instructions/DiceInstructions.unity
+    guid: 38a89e5b2de17b544a2eee2fba540f46
   - enabled: 1
     path: Assets/Scenes/AASBNarrativeScene Test Scene 3.unity
     guid: 98eaeee82006209469c2ac83a789b2f0

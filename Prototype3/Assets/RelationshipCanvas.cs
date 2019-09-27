@@ -74,7 +74,7 @@ public class RelationshipCanvas : MonoBehaviour
             else
             {
                 //If the bar is full or empty, change current level and reset bar
-                UpdateLevel();
+                //UpdateLevel();
 
 
                 //Update relationship holder

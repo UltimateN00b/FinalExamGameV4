@@ -11,6 +11,7 @@ public class HealthBar : MonoBehaviour
 
     void Start()
     {
+        sleepMeter = GameObject.Find("SleepMeter");
     }
 
     // Update is called once per frame
@@ -18,14 +19,21 @@ public class HealthBar : MonoBehaviour
     {
         if (TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP() <= 0)
         {
-            sleepMeter.GetComponent<SleepMeter>().UpdateSleepValue();
-
-            if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
+            if (!SceneManager.GetActiveScene().name.Contains("NightmareTutorial"))
             {
-                SceneManager.LoadScene("YouWin");
+                sleepMeter.GetComponent<SleepMeter>().UpdateSleepValue();
+
+                if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
+                {
+                    SceneManager.LoadScene("YouWin");
+                }
+                else
+                {
+                    SceneManager.LoadScene("YouLose");
+                }
             } else
             {
-                SceneManager.LoadScene("YouLose");
+                SceneManager.LoadScene("SleepMeterInstructions");
             }
         }
     }

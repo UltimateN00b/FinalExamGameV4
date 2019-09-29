@@ -2139,8 +2139,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "(Shit dude, you blew it! Now he thinks you\u2019re an idiot! Fuck what
-    do I do, what do I do...)"
+  m_Text: "(Damn dude, you blew it! Now he thinks you\u2019re an idiot! Calm down,
+    calm down...)"
 --- !u!222 &150678354
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9153,8 +9153,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 205647739}
   m_HandleRect: {fileID: 205647738}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20549,7 +20549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00024164529, y: -0.000016891001}
+  m_AnchoredPosition: {x: 0.000045598445, y: 0.000036663983}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302
@@ -24884,8 +24884,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Ah yes class, here is a perfect example of someone who lacks a critical
-    skill required for this course - time management. Excuse me Sir?
+  m_Text: Ah yes class, here is a perfect example of people who lack critical skills
+    required for this course - time management. Excuse me Sirs?
 --- !u!222 &1341382641
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -31394,7 +31394,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "(Ah shit he knows\u2026)"
+  m_Text: "(Ah flip he knows\u2026)"
 --- !u!222 &1765153764
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39296,11 +39296,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4387180419624539995, guid: 4ee62a819655cd14da05e326e91c898c,
-        type: 3}
-      propertyPath: m_Name
-      value: RelationshipCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 4387180419624539996, guid: 4ee62a819655cd14da05e326e91c898c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39405,6 +39400,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387180419624539995, guid: 4ee62a819655cd14da05e326e91c898c,
+        type: 3}
+      propertyPath: m_Name
+      value: RelationshipCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee62a819655cd14da05e326e91c898c, type: 3}

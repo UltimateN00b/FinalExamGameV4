@@ -1690,7 +1690,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Oh! I didn't know you were -
+  m_Text: Wow. I wish it were that easy.
 --- !u!222 &52383689
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3657,7 +3657,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_OnShown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1395011663}
+        m_MethodName: ChangeExpression
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: lana angry
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   goToConsecutiveNodeOnClick: 1
@@ -3694,8 +3705,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '...or how I would isolate myself from everyone for weeks on end until my
-    mom had to break down the door and remove all locks in the house...'
+  m_Text: '...or how I''m constantly being oppressed by the malignant hand of patriarchy
+    and toxicity of the industry...'
 --- !u!222 &155729821
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7153,7 +7164,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: My mom did her best actually. I mean, she'd take me to church almost everyday
+  m_Text: Weeeeelll she deals with it in her own way. She'd take me to church everyday
     for prayer. I guess the way she made sense of it was that it was like, demons
     in my head.
 --- !u!222 &290479048
@@ -7582,7 +7593,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Dude, mad props! I wish I was as cocky or as bastardy as you!
+  m_Text: Dude, mad props! I wish I was a "cocky bastard" like you. I'd be able to
+    shrug things off easier.
 --- !u!222 &311478065
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7929,8 +7941,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Oh but of course Lana! My apologies Ntando. I was simply blinded by the
-    gay, I couldn't see past my own intolerance! Ntando, let us reconcile over lunch
-    shall we?
+    gay, I couldn't see past my own intolerance! May we join you for lunch?
 --- !u!222 &322092708
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11916,7 +11927,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_OnShown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1395011663}
+        m_MethodName: ChangeExpression
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: lana sad
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   goToConsecutiveNodeOnClick: 1
@@ -11953,9 +11975,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: And as I got better at one thing, everything I thought was bad about myself
-    didn't matter as much anymore. And the more stuff I did, the more confident I
-    became.
+  m_Text: And when I came to Uni everything changed and I still felt inadequate. Which
+    is why I'm burning myself out trying to figure it all out but I know it'll be
+    worth it!
 --- !u!222 &457108981
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12578,9 +12600,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: But  after a while, I didn't get used to the ridicule and prejudice, but
-    I developed a healthy self-image. I realized that I was not the problem, and so
-    I don't need to be "corrected".
+  m_Text: But  after a while I developed a healthy self-image when I realized that
+    I was not the problem, and so I don't need to be "corrected."
 --- !u!222 &470520291
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13623,6 +13644,17 @@ MonoBehaviour:
           m_StringArgument: Joey happy
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1395011663}
+        m_MethodName: ChangeExpression
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: lana surprised
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   goToConsecutiveNodeOnClick: 1
@@ -14235,6 +14267,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  useTimer: 1
+  timeBeforeFadeIn: 5
 --- !u!1 &542690710
 GameObject:
   m_ObjectHideFlags: 0
@@ -16174,7 +16208,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Geez Ayanda. I'm so sorry you had to experience all that at such a young
-    age
+    age. But you can't blame yourself dude.
 --- !u!222 &594940348
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18026,9 +18060,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Yeah, yeah you guys are right! My anxiety won't just go away, it's gonna
-    stick around. But that doesn't mean I've been condemned to misery - just that
-    I'll have to work harder to overcome challenges!
+  m_Text: Yeah, yeah you guys are right! My anxiety won't just go away. But that doesn't
+    mean I've been condemned to misery - just that I'll have to work harder to overcome
+    challenges!
 --- !u!222 &660000146
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20018,9 +20052,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: And how I had to suppress my pain and anguish at the though of failing,
-    speaking to people outside of my own family or worrying about how others perceived
-    me...
+  m_Text: Or how I had to suppress my pain and anguish at the thought of failure,
+    or worrying about how others perceived me...
 --- !u!222 &727553491
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21476,7 +21509,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: It's like I convinced myself that I was the reason he left
+  m_Text: Heck, I even convinced myself that I was the reason my dad left...
 --- !u!222 &767333310
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21615,7 +21648,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: But ever since then, I've always felt...afraid
+  m_Text: But ever since then, I've always felt...like everything's my fault you know?
 --- !u!222 &774093377
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22023,8 +22056,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Haha, thanks. But yeah, it kind of messed me up. And in case you guys didn't
-    notice, I developed an anxiety disorder
+  m_Text: Haha, thanks. I don't usually talk about myself like this...
 --- !u!222 &787763137
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25246,8 +25278,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Long story short, I guess after being ostracized and discriminated by my
-    own family, I learned something quite important.
+  m_Text: But all that bullying taught me an important yet cliche lesson...
 --- !u!222 &933137216
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25695,8 +25726,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Afrikaans? Yeah I get that a lot. I guess I traded the rugby shorts for
-    this mustard sweater vest. But that's besides the point!
+  m_Text: Oh don't get me wrong, it wasn't easy. I was bullied throughout my childhood
+    for my sexuality and my clothes, or my roguishly good looks!
 --- !u!222 &959013405
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28785,7 +28816,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: What really? We never even noticed a thing!
+  m_Text: You are quite the mystery I must say!
 --- !u!222 &1096653705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30313,7 +30344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00017663997, y: 0.00001081698}
+  m_AnchoredPosition: {x: 0.00007370579, y: 0.000012577666}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302
@@ -30829,9 +30860,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: So whenever I felt a panic attack coming along, I sorta closed my eyes and
-    breathed deeply to center myself and remind myself that I shouldn't be ashamed
-    of who I am.
+  m_Text: So people are gonna say shit about me, big whoop. I just let it slide and
+    go with the tide friend.
 --- !u!222 &1141383362
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32106,7 +32136,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: I got support from those who were willing and I became more mindful.
+  m_Text: I got encouraged by my friends and some of my family. And I guess that's
+    how I became this cocky bastard!
 --- !u!222 &1172060368
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40697,7 +40728,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: (//SHITSHITSHITSHITSHITSHIT//)
+  m_Text: (OHGODOHGODOHGOD)
 --- !u!222 &1541998251
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41273,7 +41304,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Hahaha, yeah I'm sure.
+  m_Text: I wish I could express myself beyond just the "socially awkward nervous
+    kid." I - I overthink and - and - and get really nervous and it sucks. Anxiety
+    sucks ass...
 --- !u!222 &1562410890
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42492,7 +42525,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: And how about your mom? How did work around your disorder?
+  m_Text: You're preaching to the choir my dude. Does your mom know about your anxiety?
 --- !u!222 &1589339126
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43007,8 +43040,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: If you're expecting some sad story of how I grew up under the strict guidence
-    of my family and could never make sense of my feelings of hopeless ness and despair...
+  m_Text: If you're expecting some sad story of how I grew up in a strict household
+    and could never make sense of my feelings of hopeless ness and despair...
 --- !u!222 &1604295139
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -44990,7 +45023,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Dang dude, you should give a TedTalk in class sometime.
+  m_Text: Dang dude, that was a great spiritual sermon right there.
 --- !u!222 &1684476964
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45761,7 +45794,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: And now you know why I'm such a cocky bastard!
+  m_Text: I also perform at weddings and funerals.
 --- !u!222 &1719633064
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47663,8 +47696,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Anyways. Being the way I am doesn't sit too well with a lot of families
-    - in my case, a super conservative, catholic Afrikaans family.
+  m_Text: I just don't care anymore!
 --- !u!222 &1808701895
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49177,7 +49209,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: He left my mom and I when I was nine
+  m_Text: He left my mom and I when I was nine...
 --- !u!222 &1851555017
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -52288,7 +52320,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'People are always going to make you feel lesser of a person or flawed.
+  m_Text: 'Look, people are always going to make you feel lesser of a person or flawed.
     Example A) Ntando. '
 --- !u!222 &2010690498
 CanvasRenderer:
@@ -52608,8 +52640,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Well, in case you haven't noticed, not that this hairstyle makes it easy
-    to ignore it, but I'm gay.
+  m_Text: The secret it...
 --- !u!222 &2029060675
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -55079,11 +55110,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 621644}
     m_Modifications:
-    - target: {fileID: 114063469794869886, guid: ad5251174a494874580a6165f6656a0e,
-        type: 3}
-      propertyPath: startingNode
-      value: 36
-      objectReference: {fileID: 0}
     - target: {fileID: 224776264429896278, guid: ad5251174a494874580a6165f6656a0e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -55173,6 +55199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114063469794869886, guid: ad5251174a494874580a6165f6656a0e,
+        type: 3}
+      propertyPath: startingNode
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 224483521812579084, guid: ad5251174a494874580a6165f6656a0e,
         type: 3}
@@ -55303,7 +55334,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '...Not just of people in general, but my own thoughts'
+  m_Text: And I guess that's why I'm always anxious. I'm afraid I'll do something
+    catastrophic just by existing...
 --- !u!222 &2139467381
 CanvasRenderer:
   m_ObjectHideFlags: 0

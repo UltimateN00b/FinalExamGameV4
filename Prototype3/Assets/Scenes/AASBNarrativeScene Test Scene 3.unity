@@ -5658,9 +5658,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "That's all the content we can cover for now. Next time, do make an effort
-    to come prepared to class and actually read the prescribed readings? \r\nClass
-    dismissed\n"
+  m_Text: "That's all the content we can cover for now. It is highly advised to read
+    the prescribed readings before class. \rClass dismissed.\n"
 --- !u!222 &332484282
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6985,7 +6984,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "(Oh\u2026oh shit\u2026don\u2019t be weird, don't be weird!)"
+  m_Text: "(Oh\u2026here we go\u2026don\u2019t be weird, don't be weird!)"
 --- !u!222 &388295773
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7101,7 +7100,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Yeah, uh\u2026sure!"
+  m_Text: Yeah, sure! Uh, man!
 --- !u!222 &389231306
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10861,6 +10860,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  useTimer: 1
+  timeBeforeFadeIn: 5
 --- !u!1 &540679052
 GameObject:
   m_ObjectHideFlags: 0
@@ -22352,7 +22353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0001659594, y: 0.0000139749645}
+  m_AnchoredPosition: {x: 0.00010839327, y: 0.000010068629}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302
@@ -27998,7 +27999,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "[Great! Now she thinks I\u2019m some loser with a tragic past and unresolved
-    emotional trauma or some shit. Way to go idiot!]"
+    emotional trauma. Way to go idiot!]"
 --- !u!222 &1391723938
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41250,7 +41251,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "(Great! Now she thinks I\u2019m some loser with a tragic past and unresolved
-    emotional trauma or some shit. Way to go idiot! Okay, just...just...breathe...)"
+    emotional trauma. Way to go idiot! Okay, just...just...breathe...)"
 --- !u!222 &2115640461
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42088,11 +42089,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 621644}
     m_Modifications:
-    - target: {fileID: 114063469794869886, guid: ad5251174a494874580a6165f6656a0e,
-        type: 3}
-      propertyPath: startingNode
-      value: 36
-      objectReference: {fileID: 0}
     - target: {fileID: 224776264429896278, guid: ad5251174a494874580a6165f6656a0e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42182,6 +42178,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114063469794869886, guid: ad5251174a494874580a6165f6656a0e,
+        type: 3}
+      propertyPath: startingNode
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 224483521812579084, guid: ad5251174a494874580a6165f6656a0e,
         type: 3}

@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 114132508596893236}
   - component: {fileID: 114234187333044572}
   - component: {fileID: 114366594122015318}
+  - component: {fileID: 8787739420370934882}
   m_Layer: 5
   m_Name: ChoiceButton0
   m_TagString: Untagged
@@ -424,6 +425,20 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &8787739420370934882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124292004747196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796eea55a5af50042aa5df487ad87b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeAmount: 0.05
+  originalFadeAlpha: 1
 --- !u!1 &1276524728882720
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +581,7 @@ GameObject:
   - component: {fileID: 224082983798074380}
   - component: {fileID: 222061761649560086}
   - component: {fileID: 114185177120500042}
+  - component: {fileID: 5826663860116357260}
   m_Layer: 5
   m_Name: Choice0Text
   m_TagString: Untagged
@@ -636,6 +652,20 @@ MonoBehaviour:
   m_Text: 'Choice
 
 '
+--- !u!114 &5826663860116357260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362502473958932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796eea55a5af50042aa5df487ad87b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeAmount: 0.05
+  originalFadeAlpha: 1
 --- !u!1 &1369370561886294
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,6 +754,7 @@ GameObject:
   - component: {fileID: 114434099938086696}
   - component: {fileID: 114322968098154276}
   - component: {fileID: 114531527404110738}
+  - component: {fileID: 8104788675589937596}
   m_Layer: 5
   m_Name: ChoiceButton2
   m_TagString: Untagged
@@ -873,6 +904,20 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &8104788675589937596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426637806227124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796eea55a5af50042aa5df487ad87b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeAmount: 0.05
+  originalFadeAlpha: 1
 --- !u!1 &1503213020798604
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +929,7 @@ GameObject:
   - component: {fileID: 224099527536281362}
   - component: {fileID: 222768010585590120}
   - component: {fileID: 114233937003063852}
+  - component: {fileID: 5688444720158163175}
   m_Layer: 5
   m_Name: Choice1Text
   m_TagString: Untagged
@@ -954,6 +1000,20 @@ MonoBehaviour:
   m_Text: 'Choice
 
 '
+--- !u!114 &5688444720158163175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503213020798604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796eea55a5af50042aa5df487ad87b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeAmount: 0.05
+  originalFadeAlpha: 1
 --- !u!1 &1573348818668356
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,6 +1028,7 @@ GameObject:
   - component: {fileID: 114245717003513300}
   - component: {fileID: 114759802079918012}
   - component: {fileID: 114509736689410478}
+  - component: {fileID: 4353610702110400830}
   m_Layer: 5
   m_Name: ChoiceButton1
   m_TagString: Untagged
@@ -1117,6 +1178,20 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &4353610702110400830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573348818668356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796eea55a5af50042aa5df487ad87b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeAmount: 0.05
+  originalFadeAlpha: 1
 --- !u!1 &1645880135080290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,6 +1437,7 @@ GameObject:
   - component: {fileID: 224050485753108490}
   - component: {fileID: 222917181405419722}
   - component: {fileID: 114189746695333856}
+  - component: {fileID: 4738904663945049608}
   m_Layer: 5
   m_Name: Choice2Text
   m_TagString: Untagged
@@ -1432,3 +1508,17 @@ MonoBehaviour:
   m_Text: 'Choice
 
 '
+--- !u!114 &4738904663945049608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912247990147044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796eea55a5af50042aa5df487ad87b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeAmount: 0.05
+  originalFadeAlpha: 1

@@ -43,6 +43,11 @@ public class NodeSearchWindow : EditorWindow {
         {
             SearchAllObjects();
         }
+
+        if (GUILayout.Button("Search Characters"))
+        {
+            SearchCharacters();
+        }
     }
 
     private void SearchMultipleSelections()
@@ -157,4 +162,27 @@ public class NodeSearchWindow : EditorWindow {
         Selection.objects = finalSelection.ToArray();
     }
 
+    private void SearchCharacters()
+    {
+        GameObject searchObject = GameObject.Find("NodesCanvas");
+
+        List<GameObject> finalSelection = new List<GameObject>();
+
+        // Do comparison here. For example
+        for (int i = 0; i < searchObject.transform.childCount; i++)
+        {
+            GameObject currChild = searchObject.transform.GetChild(i).gameObject;
+            string currCharacterName = currChild.GetComponent<MainText>().GetCurrCharacter();
+
+            if (currCharacterName != null)
+            {
+                if (currCharacterName.ToUpper().Contains(searchString.ToUpper()))
+                {
+                    finalSelection.Add(currChild);
+                }
+            }
+        }
+
+        Selection.objects = finalSelection.ToArray();
+    }
 }

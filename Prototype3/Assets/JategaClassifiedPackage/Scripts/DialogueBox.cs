@@ -336,6 +336,7 @@ public class DialogueBox : MonoBehaviour
             {
                 GameObject currChoice = Utilities.SearchChild("ChoiceButton" + i, this.gameObject);
                 currChoice.SetActive(true);
+                currChoice.GetComponent<ChoiceButton>().Show();
             }
         }
 

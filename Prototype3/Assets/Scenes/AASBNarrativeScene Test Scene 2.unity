@@ -1517,7 +1517,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Huh? Oh! Hey Joey.
+  m_Text: Oh. Uh...Hey Joey!
 --- !u!222 &33852950
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12042,7 +12042,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 205647738}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12678,7 +12678,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e56380d7a8976b945a1e129e56c02e74, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e4d1e4ce309b42c4792d19e55dfc9878, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -12777,6 +12777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  useTimer: 1
+  timeBeforeFadeIn: 5
 --- !u!1 &542690710
 GameObject:
   m_ObjectHideFlags: 0
@@ -15543,7 +15545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f7795be51104304f82c7648ecfb2ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currCharacter: Narrator
+  currCharacter: Ayanda
   m_OnClicked:
     m_PersistentCalls:
       m_Calls:
@@ -15621,8 +15623,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '[After class, Ayanda returns home, exhausted and goes straight to sleep.
-    ]'
+  m_Text: '(Shoot...that thought alone takes WAY more outta me than it should.
+
+
+    Crap. Who am I kidding? I''m  not getting anything done today. I just want to
+    go home. No work. No work. PLEASE no work after that. Just...sleep...)'
 --- !u!222 &618978956
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27035,7 +27040,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0001598871, y: 0.000013007573}
+  m_AnchoredPosition: {x: -0.00009037547, y: 0.000026144417}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302
@@ -27952,7 +27957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f7795be51104304f82c7648ecfb2ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currCharacter: Narrator
+  currCharacter: Ayanda
   m_OnClicked:
     m_PersistentCalls:
       m_Calls:
@@ -39712,7 +39717,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "The name\u2019s Joey by the way. Joey Vorster."
+  m_Text: "Oh, sorry! The name\u2019s Joey by the way. Joey Vorster."
 --- !u!222 &1671315169
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40506,7 +40511,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Y-yeah. No kidding.
+  m_Text: H-huh...?
 --- !u!222 &1727074060
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41371,7 +41376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f7795be51104304f82c7648ecfb2ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currCharacter: Narrator
+  currCharacter: Ayanda
   m_OnClicked:
     m_PersistentCalls:
       m_Calls:
@@ -43177,7 +43182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f7795be51104304f82c7648ecfb2ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currCharacter: Narrator
+  currCharacter: Ayanda
   m_OnClicked:
     m_PersistentCalls:
       m_Calls: []
@@ -43244,8 +43249,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: (Mrs Engelbrecht commences the lecture. Ayanda is immediately thrown. And
-    at the end, she does roll call...)
+  m_Text: (Aaaaaaaand then, Mrs Engelbrecht starts talking. Her voice sounds like
+    a motorboat! As goes just as fast...And I don't know WHERE we are. I think I lost
+    her two minutes in and I can't keep up and, and, and-)
 --- !u!222 &1817427637
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -48548,7 +48554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f7795be51104304f82c7648ecfb2ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currCharacter: Narrator
+  currCharacter: Ayanda
   m_OnClicked:
     m_PersistentCalls:
       m_Calls:
@@ -50088,7 +50094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f7795be51104304f82c7648ecfb2ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currCharacter: Narrator
+  currCharacter: Ayanda
   m_OnClicked:
     m_PersistentCalls:
       m_Calls: []
@@ -50178,7 +50184,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '[Ayanda finds his seat at the back of the room]'
+  m_Text: (I almost run to the back of the room after that. Oh, wow, I'm really shaking...)
 --- !u!222 &2123480497
 CanvasRenderer:
   m_ObjectHideFlags: 0

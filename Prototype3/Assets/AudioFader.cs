@@ -7,13 +7,18 @@ public class AudioFader : MonoBehaviour
 
     public float fadeAmount;
 
+    public bool useTimer = true;
+    public float timeBeforeFadeIn = 5;
+
     private bool _fadeIn;
     private bool _fadeOut;
+
+    private float _timer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _timer = 0.0f;
     }
 
     // Update is called once per frame
@@ -21,12 +26,22 @@ public class AudioFader : MonoBehaviour
     {
         if (_fadeIn)
         {
-            if (this.GetComponent<AudioSource>().volume < 1)
+            if (useTimer)
             {
-                this.GetComponent<AudioSource>().volume += fadeAmount;
-            } else
-            {
-                _fadeIn = false;
+                _timer += Time.deltaTime;
+
+                if (_timer >= timeBeforeFadeIn)
+                {
+                    if (this.GetComponent<AudioSource>().volume < 1)
+                    {
+                        this.GetComponent<AudioSource>().volume += fadeAmount;
+                    }
+                    else
+                    {
+                        _fadeIn = false;
+                        _timer = 0.0f;
+                    }
+                }
             }
         } else if (_fadeOut)
         {
@@ -48,5 +63,6 @@ public class AudioFader : MonoBehaviour
     public void FadeOut()
     {
         _fadeOut = true;
+        _fadeIn = false;
     }
 }

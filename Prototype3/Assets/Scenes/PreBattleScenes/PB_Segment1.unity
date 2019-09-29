@@ -248,6 +248,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 07dafd9647326c84292cd8fbb7b691e9,
         type: 3}
+    - target: {fileID: 19846759, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
+      propertyPath: timeBetweenDiceRolls
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 256434000, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
+      propertyPath: timeBetweenDiceRolls
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130384204, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
+      propertyPath: timeBetweenDiceRolls
+      value: 1.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
 --- !u!1 &2729189
@@ -7248,7 +7260,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 205647739}
   m_HandleRect: {fileID: 205647738}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7879,6 +7891,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  useTimer: 1
+  timeBeforeFadeIn: 5
 --- !u!1 &538990531
 GameObject:
   m_ObjectHideFlags: 0
@@ -15262,7 +15276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00019257427, y: 0.000017889553}
+  m_AnchoredPosition: {x: 0.00020685958, y: 0.0000010790026}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302

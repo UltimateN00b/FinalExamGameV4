@@ -1414,7 +1414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e871763ea228a1f45a57157c8eafb8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenDiceRolls: 2
+  timeBetweenDiceRolls: 1.1
   percentageChanceOfAttack: 20
 --- !u!1 &321067036
 GameObject:
@@ -6699,7 +6699,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119792786}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 54f73539a3fb2b345af12b611e4c2a2f, type: 3}
@@ -13181,7 +13181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9e25e311fdc5b44aca9fcb97fb9aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenDiceRolls: 2
+  timeBetweenDiceRolls: 1.1
   percentageChanceOfAttack: 20
 --- !u!1001 &3530507862051614141
 PrefabInstance:

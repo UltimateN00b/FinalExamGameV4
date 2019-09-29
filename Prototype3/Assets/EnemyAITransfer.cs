@@ -6,6 +6,6 @@ public class EnemyAITransfer : MonoBehaviour
 
 {
 
-    public float timeBetweenDiceRolls;
+    public float timeBetweenDiceRolls = 1.1f;
     public int percentageChanceOfAttack;
 }

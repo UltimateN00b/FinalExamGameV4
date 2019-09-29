@@ -28,6 +28,9 @@ public class DiceManager : MonoBehaviour
 
     private static bool _canReset;
 
+    private static int _numPlayerRolls;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +44,11 @@ public class DiceManager : MonoBehaviour
         _resetManually = false;
 
         _canReset = false;
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        _numPlayerRolls = 0;
     }
 
     // Update is called once per frame
@@ -355,5 +363,15 @@ public class DiceManager : MonoBehaviour
                 GameObject.Find("DiceCanvas").transform.GetChild(i).GetComponent<Dice>().SetClicked(false);
             }
         }
+    }
+
+    public static void IncreaseNumPlayerRolls()
+    {
+        _numPlayerRolls++;
+    }
+
+    public static int GetNumPlayerRolls()
+    {
+        return _numPlayerRolls;
     }
 }

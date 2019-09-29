@@ -23,6 +23,19 @@ public class SleepParalysisDice : MonoBehaviour
 
         GameObject.Find("ClickTheDice").GetComponent<Text>().text = "DICE VALUES: ";
 
+        if (diceRoll == 1)
+        {
+            if (DiceManager.GetNumPlayerRolls() <= 3)
+            {
+                diceRoll = 2;
+            }
+        }
+
+        if (TurnManager.GetCurrTurnCharacter().tag.Contains("Player"))
+        {
+            DiceManager.IncreaseNumPlayerRolls();
+        }
+
         FreezeOnRoll(diceRoll);
 
         if (DiceManager.APFound() == false)

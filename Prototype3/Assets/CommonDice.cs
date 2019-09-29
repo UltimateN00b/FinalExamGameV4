@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CommonDice : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,19 @@ public class CommonDice : MonoBehaviour
         int diceRoll = Random.Range(1, 7);
 
         GameObject.Find("ClickTheDice").GetComponent<Text>().text = "DICE VALUES: ";
+
+        if (diceRoll == 1)
+        {
+            if (DiceManager.GetNumPlayerRolls() <= 3)
+            {
+                diceRoll = 2;
+            }
+        }
+
+        if (TurnManager.GetCurrTurnCharacter().tag.Contains("Player"))
+        {
+            DiceManager.IncreaseNumPlayerRolls();
+        }
 
         FreezeOnRoll(diceRoll);
 

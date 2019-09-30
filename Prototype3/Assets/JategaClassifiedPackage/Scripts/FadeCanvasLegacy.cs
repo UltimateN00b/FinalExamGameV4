@@ -82,4 +82,9 @@ public class FadeCanvasLegacy : MonoBehaviour {
     {
         _fadeIn = true;
     }
+
+    public void NextDay()
+    {
+        NextDaySceneStarter.NextDay();
+    }
 }

@@ -216,7 +216,6 @@ public class Character : MonoBehaviour
         diceCanvas.transform.GetChild(0).GetComponent<Dice>().ChangeDice(dice1Type);
         diceCanvas.transform.GetChild(1).GetComponent<Dice>().ChangeDice(dice2Type);
         diceCanvas.transform.GetChild(2).GetComponent<Dice>().ChangeDice(dice3Type);
-
     }
 
     private void ApplyStatusEffects()

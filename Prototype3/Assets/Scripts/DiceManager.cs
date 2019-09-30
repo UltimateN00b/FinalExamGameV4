@@ -26,6 +26,7 @@ public class DiceManager : MonoBehaviour
 
     private static bool _hasEnabledButtons;
 
+
     private static bool _canReset;
 
     private static int _numPlayerRolls;
@@ -182,6 +183,9 @@ public class DiceManager : MonoBehaviour
                     if (c.tag.Contains("Player"))
                     {
                         GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("dying", true);
+                    } else
+                    {
+                        GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("dying", true);
                     }
                 }
             }

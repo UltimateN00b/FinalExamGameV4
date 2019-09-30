@@ -12,10 +12,6 @@ public class NegativeEvent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name.Contains("Combat"))
-        {
-            Destroy(this.gameObject);
-        }
         DontDestroyOnLoad(this.gameObject);
     }
 

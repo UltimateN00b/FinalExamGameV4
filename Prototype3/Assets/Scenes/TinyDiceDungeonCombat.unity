@@ -1424,7 +1424,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306928537}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1482,6 +1482,7 @@ Transform:
   - {fileID: 344160569}
   - {fileID: 2018734062}
   - {fileID: 707269955}
+  - {fileID: 4316481394943623189}
   m_Father: {fileID: 1069169646}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5092,52 +5093,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
---- !u!1 &872855689
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 872855691}
-  - component: {fileID: 872855690}
-  m_Layer: 0
-  m_Name: TutorialPointChecker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &872855690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872855689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d025284c494a59438db85a2e757f28d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poisonPopupHeading: Poison Dice
-  poisonPopupMessage: Your enemy has poison dice. These deal damage once on impact
-    and then at the start of each turn. CLICK TO CONTINUE.
---- !u!4 &872855691
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872855689}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 682.4265, y: 347.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &878659345
 GameObject:
   m_ObjectHideFlags: 0
@@ -9002,7 +8957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1210153352951168, guid: 8f805010e66def44f99594f9b2491787, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224930315571803934, guid: 8f805010e66def44f99594f9b2491787,
         type: 3}
@@ -13826,6 +13781,106 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2b053a5d1188344ea47dd5874e9e987, type: 3}
+--- !u!4 &4316481394943623189 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7356504798834137805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7356504798834137805
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 306928539}
+    m_Modifications:
+    - target: {fileID: 6769111273864272603, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_Name
+      value: AyandaMonster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111274090291000, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273296841147, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111272914859876, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111272819615562, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111272337805338, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 821421d380bf09b4ca9b636d5cc1103f, type: 3}
 --- !u!114 &7388499479726314237
 MonoBehaviour:
   m_ObjectHideFlags: 0

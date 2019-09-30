@@ -197,6 +197,7 @@ public class Dice : MonoBehaviour
 
     public void UnparalyseDice()
     {
+
         string questionMarkName = "QuestionMark" + this.name.ToCharArray()[this.name.Length - 1];
         GameObject.Find(questionMarkName).GetComponent<QuestionMarkDice>().ChangeToQuestionMark();
         GameObject.Find(questionMarkName).GetComponent<Image>().enabled = true;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NegativeEventHolder : MonoBehaviour
 {
@@ -24,6 +25,14 @@ public class NegativeEventHolder : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        if (SceneManager.GetActiveScene().name.Contains("TinyDiceDungeonCombat"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public NegativeEvent SearchNegativeEvents(string searchString)

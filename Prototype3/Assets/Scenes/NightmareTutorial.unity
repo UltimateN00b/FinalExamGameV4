@@ -1309,7 +1309,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306928537}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1367,6 +1367,7 @@ Transform:
   - {fileID: 344160569}
   - {fileID: 2018734062}
   - {fileID: 707269955}
+  - {fileID: 1440792432}
   m_Father: {fileID: 1069169646}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8929,6 +8930,106 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1440792431
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 306928539}
+    m_Modifications:
+    - target: {fileID: 6769111273864272603, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_Name
+      value: AyandaMonster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111274090291000, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111273296841147, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111272914859876, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111272819615562, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769111272337805338, guid: 821421d380bf09b4ca9b636d5cc1103f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 821421d380bf09b4ca9b636d5cc1103f, type: 3}
+--- !u!4 &1440792432 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6769111273864272600, guid: 821421d380bf09b4ca9b636d5cc1103f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1440792431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1456217923
 GameObject:
   m_ObjectHideFlags: 0
@@ -13165,7 +13266,7 @@ MonoBehaviour:
   myName: ???
   characterImage: {fileID: 21300000, guid: 9f2535da21168ec4bbae890ea840d885, type: 3}
   initiative: 0
-  hp: 10
+  hp: 30
   dice1Type: Common
   dice2Type: Common
   dice3Type: Common
@@ -14085,7 +14186,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: -1595561247
+  m_SortingLayerID: 0
   m_SortingOrder: 2
   m_Bones: []
   m_BoneTransforms:
@@ -14292,7 +14393,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: -1595561247
+  m_SortingLayerID: 0
   m_SortingOrder: 8
   m_Bones: []
   m_BoneTransforms:
@@ -14775,7 +14876,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: -1595561247
+  m_SortingLayerID: 0
   m_SortingOrder: 1
   m_Bones: []
   m_BoneTransforms:
@@ -14884,7 +14985,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: -1595561247
+  m_SortingLayerID: 0
   m_SortingOrder: 5
   m_Bones: []
   m_BoneTransforms:
@@ -15019,7 +15120,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: -1595561247
+  m_SortingLayerID: 0
   m_SortingOrder: 2
   m_Bones: []
   m_BoneTransforms:
@@ -15112,7 +15213,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: -1595561247
+  m_SortingLayerID: 0
   m_SortingOrder: 4
   m_Bones: []
   m_BoneTransforms:
@@ -15294,7 +15395,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: -1595561247
+  m_SortingLayerID: 0
   m_SortingOrder: 1
   m_Bones: []
   m_BoneTransforms:

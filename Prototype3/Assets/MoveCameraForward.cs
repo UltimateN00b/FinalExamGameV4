@@ -14,6 +14,8 @@ public class MoveCameraForward : MonoBehaviour
 
     public GameObject fadeCanvas;
 
+    public string nextScene = "CombatInstructions";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,7 @@ public class MoveCameraForward : MonoBehaviour
         if (_timer >= timeBeforeChange)
         {
             fadeCanvas.SetActive(true);
-            fadeCanvas.GetComponent<FadeCanvasLegacy>().ChangeScene("CombatInstructions");
+            fadeCanvas.GetComponent<FadeCanvasLegacy>().ChangeScene(nextScene);
         }
     }
 }

@@ -434,8 +434,8 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 400908521}
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: NextDay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -821,7 +821,7 @@ PrefabInstance:
     - target: {fileID: 1015671391670095447, guid: 0c11a3fb0fcb1b746affd6b48056eed8,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.1
+      value: 1.0999985
       objectReference: {fileID: 0}
     - target: {fileID: 1015671391670095447, guid: 0c11a3fb0fcb1b746affd6b48056eed8,
         type: 3}

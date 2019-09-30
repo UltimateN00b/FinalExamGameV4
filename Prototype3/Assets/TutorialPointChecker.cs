@@ -9,25 +9,61 @@ public class TutorialPointChecker : MonoBehaviour
     public string poisonPopupHeading;
     public string poisonPopupMessage;
 
+    public string lifeStealPopupHeading;
+    public string lifeStealPopupMessage;
+
     private static bool _hasShownPoisonDicePopup;
+    private static bool _hasShownLifeStealPopup;
+
+    private static int _roundNum;
 
     // Start is called before the first frame update
     void Start()
     {
         _hasShownPoisonDicePopup = false;
+        _hasShownLifeStealPopup = false;
+
+        _roundNum = 0;
+
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        if (SceneManager.GetActiveScene().name.Contains("TinyDiceDungeonCombat"))
+        {
+            _roundNum++;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!_hasShownPoisonDicePopup)
+        if (_roundNum == 1)
         {
-            if (SceneManager.GetActiveScene().name.Contains("TinyDiceDungeonCombat"))
+            if (!_hasShownPoisonDicePopup)
             {
-                if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
+                if (SceneManager.GetActiveScene().name.Contains("TinyDiceDungeonCombat"))
                 {
-                    GameObject.Find("TutorialCanvas_Basic").GetComponent<TutorialCanvasBasic>().MakeTutorialPopup(poisonPopupHeading, poisonPopupMessage);
-                    _hasShownPoisonDicePopup = true;
+                    if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
+                    {
+                        GameObject.Find("TutorialCanvas_Basic").GetComponent<TutorialCanvasBasic>().MakeTutorialPopup(poisonPopupHeading, poisonPopupMessage);
+                        _hasShownPoisonDicePopup = true;
+                    }
+                }
+            }
+        }
+        else if (_roundNum == 2)
+        {
+            if (!_hasShownLifeStealPopup)
+            {
+                if (SceneManager.GetActiveScene().name.Contains("TinyDiceDungeonCombat"))
+                {
+                    if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
+                    {
+                        GameObject.Find("TutorialCanvas_Basic").GetComponent<TutorialCanvasBasic>().MakeTutorialPopup(lifeStealPopupHeading, lifeStealPopupMessage);
+                        _hasShownLifeStealPopup = true;
+                    }
                 }
             }
         }

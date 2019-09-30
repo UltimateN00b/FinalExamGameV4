@@ -60,6 +60,9 @@ public class ConfirmAttackButton : MonoBehaviour
                         if (c.tag.Contains("Player"))
                         {
                             GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("takingDamage", true);
+                        } else
+                        {
+                            GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("takingDamage", true);
                         }
 
                         //Manage particle effects
@@ -143,6 +146,10 @@ public class ConfirmAttackButton : MonoBehaviour
             if (TurnManager.GetCurrTurnCharacter().tag.Contains("Player"))
             {
                 GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("attack", true);
+            }
+            else
+            {
+                GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("attack", true);
             }
         }
     }

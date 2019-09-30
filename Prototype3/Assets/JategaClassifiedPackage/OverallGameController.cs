@@ -26,7 +26,7 @@ public class OverallGameController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.LeftShift)|| Input.GetKeyDown(KeyCode.RightShift))
         {
-            GameObject.Find("TextLog").GetComponent<TextLog>().ControlVisibility();
+           // GameObject.Find("TextLog").GetComponent<TextLog>().ControlVisibility();
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))

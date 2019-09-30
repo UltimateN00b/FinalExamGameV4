@@ -12,6 +12,8 @@ public class TutorialCanvasBasic : MonoBehaviour
     void Start()
     {
         ResetObjects();
+        _hiding = false;
+        _showing = false;
     }
 
     // Update is called once per frame
@@ -19,14 +21,12 @@ public class TutorialCanvasBasic : MonoBehaviour
     {
         GameObject popupHeading = Utilities.SearchChild("PopupHeading", this.gameObject);
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (popupHeading.GetComponent<Text>().color.a >= 1)
         {
-            MakeTutorialPopup("Poison Dice", "Your enemy has poison dice. These dice will deal damage at the start of every turn.");
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            HideTutorialPopup();
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                HideTutorialPopup();
+            }
         }
 
         if (_showing)
@@ -36,30 +36,23 @@ public class TutorialCanvasBasic : MonoBehaviour
                 Time.timeScale = 0;
                 _showing = false;
             }
-        }
-
-        if (_hiding)
+        } else if (_hiding)
         {
-            if (popupHeading.GetComponent<Text>().color.a <= 0)
+            if (HiddenCheck())
             {
-                Time.timeScale = 1;
-                _hiding = false;
-                for (int i = 0; i < this.transform.childCount; i++)
-                {
-                    this.transform.GetChild(i).gameObject.SetActive(false);
-                }
                 ResetObjects();
+
+                Time.timeScale = 1;
+                this.transform.GetChild(0).gameObject.SetActive(false);
+
+                _hiding = false;
             }
         }
     }
 
     public void MakeTutorialPopup(string heading, string body)
     {
-        ResetObjects();
-        for (int i = 0; i < this.transform.childCount; i++)
-        {
-            this.transform.GetChild(i).gameObject.SetActive(true);
-        }
+       this.transform.GetChild(0).gameObject.SetActive(true);
 
         GameObject faderBG = Utilities.SearchChild("FaderBG", this.gameObject);
         GameObject popupBG = Utilities.SearchChild("PopupBG", this.gameObject);
@@ -75,6 +68,7 @@ public class TutorialCanvasBasic : MonoBehaviour
         popupHeading.GetComponent<MyUIFade>().FadeIn();
         popupBody.GetComponent<MyUIFade>().FadeIn();
 
+        _hiding = false;
         _showing = true;
     }
 
@@ -93,6 +87,7 @@ public class TutorialCanvasBasic : MonoBehaviour
         popupHeading.GetComponent<MyUIFade>().FadeOut();
         popupBody.GetComponent<MyUIFade>().FadeOut();
 
+        _showing = false;
         _hiding = true;
     }
 
@@ -117,7 +112,31 @@ public class TutorialCanvasBasic : MonoBehaviour
         popupBodyColor.a = 0;
         popupBody.GetComponent<Text>().color = popupBodyColor;
 
-        _hiding = false;
-        _showing = false;
+        this.transform.GetChild(0).gameObject.SetActive(false);
+    }
+
+    private bool HiddenCheck()
+    {
+
+        bool hidden = true;
+
+        GameObject faderBG = Utilities.SearchChild("FaderBG", this.gameObject);
+        GameObject popupBG = Utilities.SearchChild("PopupBG", this.gameObject);
+        GameObject popupHeading = Utilities.SearchChild("PopupHeading", this.gameObject);
+        GameObject popupBody = Utilities.SearchChild("PopupBody", this.gameObject);
+
+        Color faderBGColor = faderBG.GetComponent<Image>().color;
+        Color popupHeadingColor = popupHeading.GetComponent<Text>().color;
+        Color popupBodyColor = popupBody.GetComponent<Text>().color;
+
+        if (faderBGColor.a + popupHeadingColor.a + popupBodyColor.a > 0) //if any colour has an alpha greater than zero, then the popup is not hidden
+        {
+            hidden = false;
+        } else if (popupBG.GetComponent<RectTransform>().localScale.x > 0) //if the popupBG's scale is larger than zero, then the popup is not hidden either
+        {
+            hidden = false;
+        }
+
+        return hidden;
     }
 }

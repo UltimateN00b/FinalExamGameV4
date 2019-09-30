@@ -748,11 +748,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1015671390266035312, guid: 0c11a3fb0fcb1b746affd6b48056eed8,
-        type: 3}
-      propertyPath: m_Value
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1015671391233915126, guid: 0c11a3fb0fcb1b746affd6b48056eed8,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -768,39 +763,7 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1015671391670095447, guid: 0c11a3fb0fcb1b746affd6b48056eed8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0072556
-      objectReference: {fileID: 0}
-    - target: {fileID: 1015671391670095447, guid: 0c11a3fb0fcb1b746affd6b48056eed8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 7.3620934
-      objectReference: {fileID: 0}
-    - target: {fileID: 1015671391670095447, guid: 0c11a3fb0fcb1b746affd6b48056eed8,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8222495
-      objectReference: {fileID: 0}
-    - target: {fileID: 1015671391670095447, guid: 0c11a3fb0fcb1b746affd6b48056eed8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.80000305
-      objectReference: {fileID: 0}
-    - target: {fileID: 1015671391670095447, guid: 0c11a3fb0fcb1b746affd6b48056eed8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1015671391670095444, guid: 0c11a3fb0fcb1b746affd6b48056eed8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f71836d2363f03940bc377d033f5ad86,
-        type: 3}
-    m_RemovedComponents:
-    - {fileID: 1015671390266035313, guid: 0c11a3fb0fcb1b746affd6b48056eed8, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c11a3fb0fcb1b746affd6b48056eed8, type: 3}
 --- !u!1001 &2446264808263763587
 PrefabInstance:

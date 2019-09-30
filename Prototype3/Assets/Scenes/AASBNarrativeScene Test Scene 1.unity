@@ -9154,7 +9154,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 205647738}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999999
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20549,7 +20549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000045598445, y: 0.000036663983}
+  m_AnchoredPosition: {x: 0.00017811022, y: 0.000014592055}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302
@@ -39296,6 +39296,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4387180419624539995, guid: 4ee62a819655cd14da05e326e91c898c,
+        type: 3}
+      propertyPath: m_Name
+      value: RelationshipCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 4387180419624539996, guid: 4ee62a819655cd14da05e326e91c898c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39400,11 +39405,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4387180419624539995, guid: 4ee62a819655cd14da05e326e91c898c,
-        type: 3}
-      propertyPath: m_Name
-      value: RelationshipCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee62a819655cd14da05e326e91c898c, type: 3}

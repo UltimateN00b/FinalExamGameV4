@@ -29,6 +29,7 @@ public class SleepMeter : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name.Contains("Narrative"))
         {
+            _initialValue = this.GetComponent<Slider>().value;
             Show();
         }
         else
@@ -115,13 +116,13 @@ public class SleepMeter : MonoBehaviour
         {
             Debug.Log("AMOUNT CHANGED " + _amountChanged);
 
-            _fightOutcomeString = "Your sleep quality has improved by " + Mathf.Round(_amountChanged * 100) + "% !";
+            _fightOutcomeString = "Your sleep quality has improved!";
         }
         else
         {
             Debug.Log("AMOUNT CHANGED " + _amountChanged);
 
-            _fightOutcomeString = "Your sleep quality has declined by " + Mathf.Round(_amountChanged * 100) + "% .";
+            _fightOutcomeString = "Your sleep quality has declined.";
         }
            
       }
@@ -134,13 +135,13 @@ public class SleepMeter : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name.Contains("Win"))
         {
-            GameObject.Find("SM_Superficial").GetComponent<Slider>().value = this.GetComponent<Slider>().value + _amountChanged;
+            GameObject.Find("SM_Superficial").GetComponent<SleepMeterSuperficial>().PlaySliderAnimation(_initialValue, this.GetComponent<Slider>().value + _amountChanged);
+            Utilities.SearchChild("SleepMeter", GameObject.Find("SleepMeterCanvas")).GetComponent<Slider>().value = this.GetComponent<Slider>().value + _amountChanged;
         } else
         {
-            GameObject.Find("SM_Superficial").GetComponent<Slider>().value = this.GetComponent<Slider>().value - _amountChanged;
+            GameObject.Find("SM_Superficial").GetComponent<SleepMeterSuperficial>().PlaySliderAnimation(_initialValue, this.GetComponent<Slider>().value - _amountChanged);
+            Utilities.SearchChild("SleepMeter", GameObject.Find("SleepMeterCanvas")).GetComponent<Slider>().value = this.GetComponent<Slider>().value - _amountChanged;
         }
-
-        _initialValue = this.GetComponent<Slider>().value;
     }
 
 }

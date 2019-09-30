@@ -12,7 +12,7 @@ public class EntryTransitions : MonoBehaviour
     private Vector3 _originalScale;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _growFromCenter = false;
         _shrinkFromCenter = false;
@@ -29,7 +29,7 @@ public class EntryTransitions : MonoBehaviour
             {
                 this.GetComponent<RectTransform>().localScale += new Vector3(growthRate, growthRate, growthRate) * Time.deltaTime;
             }
-            else if (this.GetComponent<RectTransform>().localScale.x > _originalScale.x)
+            else if (this.GetComponent<RectTransform>().localScale.x >= _originalScale.x)
             {
                 this.GetComponent<RectTransform>().localScale = _originalScale;
                 _growFromCenter = false;
@@ -60,13 +60,13 @@ public class EntryTransitions : MonoBehaviour
 
     public void GrowFromCenter()
     {
-        _growFromCenter = true;
         this.GetComponent<RectTransform>().localScale = Vector3.zero;
+        _growFromCenter = true;
     }
 
     public void ShrinkFromCenter()
     {
-        _shrinkFromCenter = true;
         this.GetComponent<RectTransform>().localScale = _originalScale;
+        _shrinkFromCenter = true;
     }
 }

@@ -255,6 +255,8 @@ public class Dice : MonoBehaviour
 
     public void ResetDice()
     {
+        DiceManager.DisableAllButtons();
+
         //Reset position
         this.GetComponent<ShakeObject>().StopShaking();
         //Reset question marks

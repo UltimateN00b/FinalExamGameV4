@@ -39,11 +39,14 @@ public class EnemyAI : MonoBehaviour
         {
             if (_startTimer)
             {
-                _timer += Time.deltaTime;
-                if (_timer >= timeBetweenDiceRolls)
+                if (!GameObject.Find("AttackMissed").GetComponent<BillboardMessage>().IsShowing())
                 {
-                    _timer = 0f;
-                    _startTimer = false;
+                    _timer += Time.deltaTime;
+                    if (_timer >= timeBetweenDiceRolls)
+                    {
+                        _timer = 0f;
+                        _startTimer = false;
+                    }
                 }
             }
             else
@@ -80,13 +83,13 @@ public class EnemyAI : MonoBehaviour
 
     public void ExecuteEnemyAI()
     {
-        DiceManager.AutoSetTargets();
+            DiceManager.AutoSetTargets();
 
-        _firstRollTaken = false;
-        _executeEnemyAI = true;
-        _startTimer = true;
+            _firstRollTaken = false;
+            _executeEnemyAI = true;
+            _startTimer = true;
 
-        Debug.Log("EXECUTE ENEMY AI CALLED");
+            Debug.Log("EXECUTE ENEMY AI CALLED");
     }
 
     public void CeaseEnemyAI()

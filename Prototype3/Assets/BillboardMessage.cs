@@ -17,6 +17,8 @@ public class BillboardMessage : MonoBehaviour
 
     private float _timer;
 
+    private bool _showing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,8 @@ public class BillboardMessage : MonoBehaviour
         {
             m_OnMessageShown = new UnityEvent();
         }
+
+        _showing = false;
     }
 
     // Update is called once per frame
@@ -67,6 +71,7 @@ public class BillboardMessage : MonoBehaviour
                     _timer = 0f;
                     this.GetComponent<Image>().enabled = false;
                     m_OnMessageHidden.Invoke();
+                    _showing = false;
                 }
             }
         }
@@ -74,7 +79,7 @@ public class BillboardMessage : MonoBehaviour
 
     public void ShowMessage()
     {
-
+        _showing = true;
         //for (int j = 0; j < GameObject.Find("DiceCanvas").transform.childCount; j++)
         //{
         //    GameObject.Find("DiceCanvas").transform.GetChild(j).gameObject.GetComponent<ShakeObject>().StopShaking();
@@ -84,7 +89,13 @@ public class BillboardMessage : MonoBehaviour
 
         _fill = true;
         _wait = true;
+
         this.GetComponent<Image>().enabled = true;
 
+    }
+
+    public bool IsShowing()
+    {
+        return _showing;
     }
 }

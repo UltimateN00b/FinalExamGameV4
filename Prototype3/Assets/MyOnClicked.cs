@@ -1,20 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Spin : MonoBehaviour
+public class MyOnClicked : MonoBehaviour
 {
-    public float speed = 2;
+    public UnityEvent m_OnEnterPressed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, 100) * Time.deltaTime * speed);
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            m_OnEnterPressed.Invoke();
+        }
     }
 }

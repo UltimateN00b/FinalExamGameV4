@@ -13,7 +13,7 @@ public class PopupCanvasDiceSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Popup(string name, string info)
@@ -25,17 +25,17 @@ public class PopupCanvasDiceSelection : MonoBehaviour
 
     public void Show()
     {
-        for (int i = 0; i <this.transform.childCount; i++)
-        {
-            this.transform.GetChild(i).GetComponent<MyUIFade>().FadeIn();
-        }
+            for (int i = 0; i < this.transform.childCount; i++)
+            {
+                this.transform.GetChild(i).GetComponent<MyUIFade>().FadeIn();
+            }
     }
 
     public void Hide()
     {
-        for (int i = 0; i < this.transform.childCount; i++)
-        {
-            this.transform.GetChild(i).GetComponent<MyUIFade>().FadeOut();
-        }
+            for (int i = 0; i < this.transform.childCount; i++)
+            {
+                this.transform.GetChild(i).GetComponent<MyUIFade>().FadeOut();
+            }
     }
 }

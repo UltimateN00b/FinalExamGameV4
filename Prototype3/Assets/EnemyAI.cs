@@ -83,6 +83,8 @@ public class EnemyAI : MonoBehaviour
 
     public void ExecuteEnemyAI()
     {
+        if (!HealthBar.DeathOccurred())
+        {
             DiceManager.AutoSetTargets();
 
             _firstRollTaken = false;
@@ -90,6 +92,7 @@ public class EnemyAI : MonoBehaviour
             _startTimer = true;
 
             Debug.Log("EXECUTE ENEMY AI CALLED");
+        }
     }
 
     public void CeaseEnemyAI()

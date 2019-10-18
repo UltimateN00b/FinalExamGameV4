@@ -73,6 +73,7 @@ public class Dice : MonoBehaviour
         {
             if (!DiceManager.CanReset())
             {
+                GameObject.Find("NewRollImage").GetComponent<BillboardMessage>().ShowMessage();
                 DiceManager.SetCanReset(true);
                 _numDiceStopped = 0;
             }
@@ -207,18 +208,19 @@ public class Dice : MonoBehaviour
 
     private void MoveAndResetDice()
     {
-            if (!_hasMovedDown)
-            {
-            //Move dice until it has reached its target
-            if (this.GetComponent<ShakeObject>().IsShaking())
-            {
-                this.GetComponent<ShakeObject>().StopShaking();
-            }
+        //Uncomment this to get fall animation back!
+            //if (!_hasMovedDown)
+            //{
+            ////Move dice until it has reached its target
+            //if (this.GetComponent<ShakeObject>().IsShaking())
+            //{
+            //    this.GetComponent<ShakeObject>().StopShaking();
+            //}
 
-            MoveDown();
-            }
-            else
-            {
+            //MoveDown();
+            //}
+            //else
+            //{
 
             //Reset roll values
             DiceManager.ResetRollValues();
@@ -230,7 +232,7 @@ public class Dice : MonoBehaviour
 
             _hasMovedDown = false;
             _resetDice = false;
-        }
+        //}
     }
 
     private void MoveDown()

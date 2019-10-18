@@ -7,11 +7,19 @@ using UnityEngine.SceneManagement;
 public class HealthBar : MonoBehaviour
 {
     private static GameObject sleepMeter;
+    private static bool _death;
+
     // Start is called before the first frame update
 
     void Start()
     {
         sleepMeter = GameObject.Find("SleepMeter");
+        _death = false;
+    }
+
+    private void OnLevelWasLoaded()
+    {
+        _death = false;
     }
 
     // Update is called once per frame
@@ -19,17 +27,36 @@ public class HealthBar : MonoBehaviour
     {
         if (TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP() <= 0)
         {
+            _death = true;
+            if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
+            {
+                TurnManager.GetCurrTurnCharacter().GetComponent<EnemyAI>().CeaseEnemyAI();
+            } else
+            {
+                DiceManager.DisableAllButtons();
+            }
+
+            if ((int)(TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP()) < 0)
+            {
+                GameObject overkillCanvas = Utilities.SearchChild("OverkillCanvas", TurnManager.GetCurrTurnCharacter());
+                GameObject overkillIndicator = Utilities.SearchChild("OverkillIndicator", overkillCanvas);
+                overkillIndicator.GetComponent<OverkillIndicator>().ShowOverkill((int)(TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP()));
+            }
+
             if (!SceneManager.GetActiveScene().name.Contains("NightmareTutorial"))
             {
                 sleepMeter.GetComponent<SleepMeter>().UpdateSleepValue();
 
                 if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
                 {
-                    SceneManager.LoadScene("YouWin");
+                    //SceneManager.LoadScene("YouWin");
+
+                    Invoke("LoadWinScene", 3.0f);
                 }
                 else
                 {
-                    SceneManager.LoadScene("YouLose");
+                    //SceneManager.LoadScene("YouLose");
+                    Invoke("LoadLoseScene", 3.0f);
                 }
             } else
             {
@@ -65,5 +92,20 @@ public class HealthBar : MonoBehaviour
     public static void SetSleepMeter(GameObject sM)
     {
         sleepMeter = sM;
+    }
+
+    private void LoadWinScene()
+    {
+        SceneManager.LoadScene("YouWin");
+    }
+
+    private void LoadLoseScene()
+    {
+        SceneManager.LoadScene("YouLose");
+    }
+
+    public static bool DeathOccurred()
+    {
+        return _death;
     }
 }

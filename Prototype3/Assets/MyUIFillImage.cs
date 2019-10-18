@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spin : MonoBehaviour
+public class MyUIFillImage : MonoBehaviour
 {
-    public float speed = 2;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +13,6 @@ public class Spin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, 100) * Time.deltaTime * speed);
+        
     }
 }

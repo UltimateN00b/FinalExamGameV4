@@ -336,9 +336,6 @@ public class DiceManager : MonoBehaviour
 
     public static void ResetRollValues()
     {
-        GameObject.Find("RollTotal").GetComponent<Text>().text = "0";
-        GameObject.Find("RollTotal").GetComponent<Text>().enabled = false;
-
         for (int j = 0; j < GameObject.Find("DiceStatsCanvas").transform.childCount; j++)
         {
             if (GameObject.Find("DiceStatsCanvas").transform.GetChild(j).name.Contains("RollValue"))

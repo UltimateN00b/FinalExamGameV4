@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 1067552598}
   - component: {fileID: 1067552597}
   - component: {fileID: 1067552596}
-  - component: {fileID: 1067552599}
+  - component: {fileID: 1067552600}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -526,7 +526,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1067552599
+--- !u!114 &1067552600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1067552595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d115385289b8c4099652e06f4b6a3c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b69e9da6018f7848825ce7e21ab36d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_OnEnterPressed:
@@ -560,7 +560,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: AASBNarrativeScene Test Scene 3
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -881,6 +881,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446264807653696503, guid: 010ad8a4a16f13d4d8d2310d5a6ffa4d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446264807653696502, guid: 010ad8a4a16f13d4d8d2310d5a6ffa4d,
+        type: 3}
+      propertyPath: m_Text
+      value: CLICK TO CONTINUE
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446264807653696502, guid: 010ad8a4a16f13d4d8d2310d5a6ffa4d,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 010ad8a4a16f13d4d8d2310d5a6ffa4d, type: 3}

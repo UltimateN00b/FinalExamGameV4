@@ -62,26 +62,26 @@ public class Character : MonoBehaviour
 
     public void SetMyTurn()
     {
-        _isSelected = false;
+            _isSelected = false;
 
-        GameObject.Find("ConfirmAttackButton").GetComponent<ConfirmAttackButton>().ShowUI();
-        GameObject.Find("ConfirmAttackButton").GetComponent<CustomButton>().Enable();
+            GameObject.Find("ConfirmAttackButton").GetComponent<ConfirmAttackButton>().ShowUI();
+            GameObject.Find("ConfirmAttackButton").GetComponent<CustomButton>().Enable();
 
-        GameObject characterInfoCanvas = GameObject.Find("CharacterInfoCanvas");
-        GameObject statsCanvas = GameObject.Find("StatsCanvas");
+            GameObject characterInfoCanvas = GameObject.Find("CharacterInfoCanvas");
+            GameObject statsCanvas = GameObject.Find("StatsCanvas");
 
-        Utilities.SearchChild("Name", characterInfoCanvas).GetComponent<Text>().text = myName;
-        Utilities.SearchChild("Image", characterInfoCanvas).GetComponent<Image>().sprite = characterImage;
+            Utilities.SearchChild("Name", characterInfoCanvas).GetComponent<Text>().text = myName;
+            Utilities.SearchChild("Image", characterInfoCanvas).GetComponent<Image>().sprite = characterImage;
 
-        //*where dice total clear was
+            //*where dice total clear was
 
-        DiceManager.SetCurrCharacter(this);
+            DiceManager.SetCurrCharacter(this);
 
-        DiceManager.ClearAllDiceTotals();
+            DiceManager.ClearAllDiceTotals();
 
-        DiceManager.SetAllDiceUnclicked();
+            DiceManager.SetAllDiceUnclicked();
 
-        DiceManager.ClearTargets();
+            DiceManager.ClearTargets();
 
             if (!TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
             {
@@ -93,32 +93,32 @@ public class Character : MonoBehaviour
                 TurnManager.GetCurrTurnCharacter().gameObject.GetComponent<EnemyAI>().ExecuteEnemyAI();
             }
 
-        GameObject.Find("ConfirmAttackButton").GetComponent<CustomButton>().Disable();
+            GameObject.Find("ConfirmAttackButton").GetComponent<CustomButton>().Disable();
 
-        if (DiceManager.GetCurrCharacter().tag.Contains("Enemy"))
-        {
-            DiceManager.DisableAllButtons();
-        }
-        else
-        {
-            DiceManager.EnableAllButtons();
-        }
+            if (DiceManager.GetCurrCharacter().tag.Contains("Enemy"))
+            {
+                DiceManager.DisableAllButtons();
+            }
+            else
+            {
+                DiceManager.EnableAllButtons();
+            }
 
-        Utilities.SearchChild("TurnArrow", this.gameObject).GetComponent<SpriteRenderer>().enabled = true;
+            Utilities.SearchChild("TurnArrow", this.gameObject).GetComponent<SpriteRenderer>().enabled = true;
 
-        //DiceManager.SetCanReset(true);
+            //DiceManager.SetCanReset(true);
 
-        ChangeDiceType();
-        DiceManager.ClearAllDiceTotals();
+            ChangeDiceType();
+            DiceManager.ClearAllDiceTotals();
 
-        if (!_paralysed)
-        {
-            GameObject diceCanvas = GameObject.Find("DiceCanvas");
-            diceCanvas.transform.GetChild(2).GetComponent<Dice>().UnparalyseDice();
-        }
+            if (!_paralysed)
+            {
+                GameObject diceCanvas = GameObject.Find("DiceCanvas");
+                diceCanvas.transform.GetChild(2).GetComponent<Dice>().UnparalyseDice();
+            }
 
-        ApplyStatusEffects();
-        DiceManager.CurrCombatStage = DiceManager.CombatStage.DiceAndTargets;
+            ApplyStatusEffects();
+            DiceManager.CurrCombatStage = DiceManager.CombatStage.DiceAndTargets;
     }
 
     public float GetInitiative()

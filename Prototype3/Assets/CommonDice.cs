@@ -59,10 +59,10 @@ public class CommonDice : MonoBehaviour
         string rollValueName = "RollValue" + Dice.LastDiceClicked().name.ToCharArray()[Dice.LastDiceClicked().name.Length - 1];
         GameObject.Find(rollValueName).GetComponent<Text>().text = diceRoll.ToString();
 
-        int rollTotal = int.Parse(GameObject.Find("RollTotal").GetComponent<Text>().text);
-        rollTotal += diceRoll;
-        GameObject.Find("RollTotal").GetComponent<Text>().text = rollTotal.ToString();
-        GameObject.Find("RollTotal").GetComponent<Text>().enabled = true;
+        //int rollTotal = int.Parse(GameObject.Find("RollTotal").GetComponent<Text>().text);
+        //rollTotal += diceRoll;
+        //GameObject.Find("RollTotal").GetComponent<Text>().text = rollTotal.ToString();
+        //GameObject.Find("RollTotal").GetComponent<Text>().enabled = true;
 
         int attackTotal = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
         attackTotal += diceRoll;

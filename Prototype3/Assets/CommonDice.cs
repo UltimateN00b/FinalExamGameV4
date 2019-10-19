@@ -9,7 +9,6 @@ public class CommonDice : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -74,6 +73,8 @@ public class CommonDice : MonoBehaviour
             GameObject.Find("ConfirmAttackButton").GetComponent<CustomButton>().Disable();
             GameObject.Find("AttackMissed").GetComponent<BillboardMessage>().ShowMessage();
         }
+
+        GameObject.Find("AttackHolder").GetComponent<AttackHolder>().AddAttack(diceRoll, "Common", diceRoll);
     }
 
     private void FreezeOnRoll(int num)
@@ -96,7 +97,5 @@ public class CommonDice : MonoBehaviour
 
         Dice.LastDiceClicked().GetComponent<Image>().sprite = freezeSprite;
     }
-
-
 
 }

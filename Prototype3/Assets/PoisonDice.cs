@@ -89,6 +89,8 @@ public class PoisonDice : MonoBehaviour
             GameObject.Find("ConfirmAttackButton").GetComponent<CustomButton>().Disable();
             GameObject.Find("AttackMissed").GetComponent<BillboardMessage>().ShowMessage();
         }
+
+        GameObject.Find("AttackHolder").GetComponent<AttackHolder>().AddAttack(diceRoll, "Poison", damageDoneOnHit, diceRoll);
     }
 
     public void OnAttack()
@@ -101,6 +103,22 @@ public class PoisonDice : MonoBehaviour
                 GameObject poison = Utilities.SearchChild("PoisonImage", poisonCanvas);
 
                 int poisonTotal = int.Parse(DiceManager.FindTypeTotalGameObject("PP").transform.GetChild(0).GetComponent<Text>().text);
+
+                poison.GetComponent<Poison>().AddPoison(poisonTotal);
+            }
+        }
+    }
+
+    public void OnIndividualAttack(int pP)
+    {
+        if (DiceManager.FindTypeTotalGameObject("PP") != null)
+        {
+            foreach (Character c in DiceManager.GetCurrTargets())
+            {
+                GameObject poisonCanvas = Utilities.SearchChild("PoisonCanvas", c.gameObject);
+                GameObject poison = Utilities.SearchChild("PoisonImage", poisonCanvas);
+
+                int poisonTotal = pP;
 
                 poison.GetComponent<Poison>().AddPoison(poisonTotal);
             }

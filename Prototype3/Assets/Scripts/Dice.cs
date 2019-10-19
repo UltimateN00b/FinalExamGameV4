@@ -29,6 +29,11 @@ public class Dice : MonoBehaviour
 
     private bool _beenClicked;
 
+    private void Awake()
+    {
+        _paralysed = false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,8 +66,6 @@ public class Dice : MonoBehaviour
 
         _numDiceStopped = 0;
 
-        _paralysed = false;
-
         _beenClicked = false;
     }
 
@@ -83,6 +86,11 @@ public class Dice : MonoBehaviour
         {
             Debug.Log("TRYING TO RESET DICE");
             MoveAndResetDice();
+        }
+
+        if (_paralysed)
+        {
+            this.GetComponent<ShakeObject>().StopShaking();
         }
     }
 
@@ -107,29 +115,29 @@ public class Dice : MonoBehaviour
 
     public void OnDiceClicked()
     {
-        if (DiceManager.CurrCombatStage == DiceManager.CombatStage.DiceAndTargets)
-        {
-            _stopped = true;
-
-            _beenClicked = true;
-
-            _lastDiceClicked = this.gameObject;
-
-            this.GetComponent<ShakeObject>().StopShaking();
-
-            _numDiceStopped++;
-
-            string questionMarkName = "QuestionMark" + this.name.ToCharArray()[this.name.Length - 1];
-            GameObject.Find(questionMarkName).GetComponent<Image>().enabled = false;
-
-            if (!DiceManager.GetCurrCharacter().tag.Contains("Enemy"))
+            if (DiceManager.CurrCombatStage == DiceManager.CombatStage.DiceAndTargets)
             {
-                AudioManager.PlaySound(Resources.Load("Dice roll") as AudioClip);
-                m_OnDiceStopped.Invoke();
-            }
+                _stopped = true;
 
-            this.GetComponent<Button>().enabled = false;
-        }
+                _beenClicked = true;
+
+                _lastDiceClicked = this.gameObject;
+
+                this.GetComponent<ShakeObject>().StopShaking();
+
+                _numDiceStopped++;
+
+                string questionMarkName = "QuestionMark" + this.name.ToCharArray()[this.name.Length - 1];
+                GameObject.Find(questionMarkName).GetComponent<Image>().enabled = false;
+
+                if (!DiceManager.GetCurrCharacter().tag.Contains("Enemy"))
+                {
+                    AudioManager.PlaySound(Resources.Load("Dice roll") as AudioClip);
+                    m_OnDiceStopped.Invoke();
+                }
+
+                this.GetComponent<Button>().enabled = false;
+            }
     }
 
 
@@ -155,25 +163,28 @@ public class Dice : MonoBehaviour
 
     public void ManuallyClickDice()
     {
-        if (DiceManager.CurrCombatStage == DiceManager.CombatStage.DiceAndTargets)
+        if (!_paralysed)
         {
-            _stopped = true;
+            if (DiceManager.CurrCombatStage == DiceManager.CombatStage.DiceAndTargets)
+            {
+                _stopped = true;
 
-            _beenClicked = true;
+                _beenClicked = true;
 
-            _numDiceStopped++;
+                _numDiceStopped++;
 
-            _lastDiceClicked = this.gameObject;
+                _lastDiceClicked = this.gameObject;
 
-            this.GetComponent<ShakeObject>().StopShaking();
-            string questionMarkName = "QuestionMark" + this.name.ToCharArray()[this.name.Length - 1];
-            GameObject.Find(questionMarkName).GetComponent<Image>().enabled = false;
+                this.GetComponent<ShakeObject>().StopShaking();
+                string questionMarkName = "QuestionMark" + this.name.ToCharArray()[this.name.Length - 1];
+                GameObject.Find(questionMarkName).GetComponent<Image>().enabled = false;
 
-            AudioManager.PlaySound(Resources.Load("Dice roll") as AudioClip);
-            m_OnDiceStopped.Invoke();
+                AudioManager.PlaySound(Resources.Load("Dice roll") as AudioClip);
+                m_OnDiceStopped.Invoke();
 
-            this.GetComponent<Button>().enabled = false;
-        }
+                this.GetComponent<Button>().enabled = false;
+            }
+        } 
     }
 
     public void ParalyseDice()
@@ -182,6 +193,7 @@ public class Dice : MonoBehaviour
 
         _numDiceStopped++;
 
+        this.GetComponent<ShakeObject>().SetStartPos();
         this.GetComponent<ShakeObject>().StopShaking();
 
         //change question mark to a paralysed marker
@@ -267,8 +279,10 @@ public class Dice : MonoBehaviour
         GameObject.Find(questionMarkName).GetComponent<Image>().enabled = true;
 
         //Start shaking
-        this.GetComponent<ShakeObject>().Shake();
-        _stopped = false;
+
+            this.GetComponent<ShakeObject>().Shake();
+            _stopped = false;
+
         this.GetComponent<Animator>().enabled = true;
 
         //Re-enable buttons if the current character is not an enemy

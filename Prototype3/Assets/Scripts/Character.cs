@@ -34,9 +34,10 @@ public class Character : MonoBehaviour
 
             if (this.gameObject.tag.Equals("Player"))
             {
-                dice1Type = PlayerDiceHolder.GetDiceType(1);
-                dice2Type = PlayerDiceHolder.GetDiceType(2);
-                dice3Type = PlayerDiceHolder.GetDiceType(3);
+            //IfShitBreaking change back to PlayerDiceHolder.GetDiceType(1), 2 and 3
+            dice1Type = "Common";
+            dice2Type = "SleepParalysis";
+            dice3Type = "Multiplier";
             }
     }
 

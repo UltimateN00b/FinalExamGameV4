@@ -67,6 +67,8 @@ public class SleepParalysisDice : MonoBehaviour
             GameObject.Find("ConfirmAttackButton").GetComponent<CustomButton>().Disable();
             GameObject.Find("AttackMissed").GetComponent<BillboardMessage>().ShowMessage();
         }
+
+        GameObject.Find("AttackHolder").GetComponent<AttackHolder>().AddAttack(diceRoll, "SleepParalysis", diceRoll);
     }
 
     public void OnAttack()
@@ -96,6 +98,14 @@ public class SleepParalysisDice : MonoBehaviour
         }
 
         Dice.LastDiceClicked().GetComponent<Image>().sprite = freezeSprite;
+    }
+
+    public void OnIndividualAttack()
+    {
+        foreach (Character c in DiceManager.GetCurrTargets())
+        {
+            c.SetParalysed(true);
+        }
     }
 
 }

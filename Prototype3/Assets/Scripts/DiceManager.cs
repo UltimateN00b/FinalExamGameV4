@@ -154,13 +154,13 @@ public class DiceManager : MonoBehaviour
         _currTargets = new List<Character>();
     }
 
-    public static void ExecuteAttack()
+    public static void ExecuteAttack(int damage) //OLD EXECUTE ATTACK. REVERT TO THIS IF WE TAKE OUT COMBO ANIMATIONS.
     {
         foreach (Character c in _currTargets)
         {
             if (DiceManager.FindTypeTotalGameObject("AP") != null)
             {
-                int damage = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
+                //int damage = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
 
                 GameObject healthCanvas = Utilities.SearchChild("HealthCanvas", c.gameObject);
                 GameObject healthBar = Utilities.SearchChild("HealthBar", healthCanvas);
@@ -294,12 +294,6 @@ public class DiceManager : MonoBehaviour
     public float GetResetDiceTime()
     {
         return resetDiceTime;
-    }
-
-    public static void ResetDice()
-    {
-
-
     }
 
     public static void DisableAllButtons()

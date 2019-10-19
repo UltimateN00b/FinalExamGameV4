@@ -139,6 +139,8 @@ public class TurnManager : MonoBehaviour
 
     public static void NextTurn()
     {
+        GameObject.Find("AttackHolder").GetComponent<AttackHolder>().ClearAttacks();
+
         Utilities.SearchChild("TurnArrow", _currTurnCharacter).GetComponent<SpriteRenderer>().enabled = false;
 
         if (_currChar < _charactersInCombat.Count-1)

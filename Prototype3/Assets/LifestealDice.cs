@@ -58,11 +58,6 @@ public class LifestealDice : MonoBehaviour
         string rollValueName = "RollValue" + Dice.LastDiceClicked().name.ToCharArray()[Dice.LastDiceClicked().name.Length - 1];
         GameObject.Find(rollValueName).GetComponent<Text>().text = diceRoll.ToString();
 
-        int rollTotal = int.Parse(GameObject.Find("RollTotal").GetComponent<Text>().text);
-        rollTotal += diceRoll;
-        GameObject.Find("RollTotal").GetComponent<Text>().text = rollTotal.ToString();
-        GameObject.Find("RollTotal").GetComponent<Text>().enabled = true;
-
         int attackTotal = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
         attackTotal += diceRoll;
         DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text = attackTotal.ToString();
@@ -73,6 +68,9 @@ public class LifestealDice : MonoBehaviour
             GameObject.Find("ConfirmAttackButton").GetComponent<CustomButton>().Disable();
             GameObject.Find("AttackMissed").GetComponent<BillboardMessage>().ShowMessage();
         }
+
+
+        GameObject.Find("AttackHolder").GetComponent<AttackHolder>().AddAttack(diceRoll, "LifeSteal", diceRoll);
     }
 
     private void FreezeOnRoll(int num)
@@ -103,6 +101,26 @@ public class LifestealDice : MonoBehaviour
             //Calculate health returned from lifesteal (half of damage dealt)
             int attackTotal = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
             int lifeSteal = (int)(Mathf.Round(attackTotal * 0.5f));
+
+            //Raise health back up
+            GameObject healthCanvas = Utilities.SearchChild("HealthCanvas", TurnManager.GetCurrTurnCharacter());
+            GameObject healthBar = Utilities.SearchChild("HealthBar", healthCanvas);
+
+            healthBar.GetComponent<HealthBar>().ChangeHealth(lifeSteal);
+
+            //Indicate health change with UI lettering
+            GameObject lifeStealCanvas = Utilities.SearchChild("LifeStealCanvas", TurnManager.GetCurrTurnCharacter());
+            GameObject lifeStealIndicator = Utilities.SearchChild("LifestealIndicator", lifeStealCanvas);
+            lifeStealIndicator.GetComponent<LifeStealIndicator>().ShowLifestealChange(lifeSteal);
+        }
+    }
+
+    public void OnIndividualAttack(int aP)
+    {
+        if (DiceManager.FindTypeTotalGameObject("AP") != null)
+        {
+            //Calculate health returned from lifesteal (half of damage dealt)
+            int lifeSteal = (int)(Mathf.Round(aP * 0.5f));
 
             //Raise health back up
             GameObject healthCanvas = Utilities.SearchChild("HealthCanvas", TurnManager.GetCurrTurnCharacter());

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class ConfirmAttackButton : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class ConfirmAttackButton : MonoBehaviour
     private GameObject _uiEnemy;
     private GameObject _uiSkinEnemy;
 
+    private List<IndividualAttack> _attacks; //The on attack will be taken from the attack.
+    private int _attackNum;
+
+    private UnityEvent m_OnCurrAttack;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -32,6 +38,14 @@ public class ConfirmAttackButton : MonoBehaviour
 
         _uiEnemy.SetActive(false);
         _uiSkinEnemy.SetActive(false);
+
+        _attacks = new List<IndividualAttack>();
+        _attackNum = 0;
+
+        if (m_OnCurrAttack == null)
+        {
+            m_OnCurrAttack = new UnityEvent();
+        }
     }
 
     // Update is called once per frame
@@ -60,7 +74,8 @@ public class ConfirmAttackButton : MonoBehaviour
                         if (c.tag.Contains("Player"))
                         {
                             GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("takingDamage", true);
-                        } else
+                        }
+                        else
                         {
                             GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("takingDamage", true);
                         }
@@ -86,38 +101,58 @@ public class ConfirmAttackButton : MonoBehaviour
 
 
                     Character currChar = DiceManager.GetCurrCharacter();
-                    DiceManager.ExecuteAttack();
+                    DiceManager.ExecuteAttack(_attacks[_attackNum].GetMyAP());
 
-                    for (int i = 0; i < GameObject.Find("DiceCanvas").transform.childCount; i++)
-                    {
-                        GameObject currChild = GameObject.Find("DiceCanvas").transform.GetChild(i).gameObject;
+                    //OLD - USE THE CODE BELOW FOR THE COLLECTIVE SYSTEM AND NOT THE COMBO
+                    //for (int i = 0; i < GameObject.Find("DiceCanvas").transform.childCount; i++)
+                    //{
+                    //    GameObject currChild = GameObject.Find("DiceCanvas").transform.GetChild(i).gameObject;
 
-                        if (currChild.activeInHierarchy)
-                        {
-                            currChild.GetComponent<Dice>().InvokeOnAttackEvent();
-                        }
-                    }
+                    //    if (currChild.activeInHierarchy)
+                    //    {
+                    //        currChild.GetComponent<Dice>().InvokeOnAttackEvent();
+                    //    }
+                    //}
+
+                    DiceType myDiceType = DiceManager.SearchDiceType(_attacks[_attackNum].GetMyType());
+                    m_OnCurrAttack = myDiceType.GetOnAttackEvent();
+                    m_OnCurrAttack.Invoke();
 
                     _hasPlayedAttackAnim = true;
                 }
             }
             else
             {
-                DiceManager.GetCurrCharacter().gameObject.transform.position = Vector3.MoveTowards(DiceManager.GetCurrCharacter().gameObject.transform.position, _originalPos, step);
+                //***IF the attack num = the length of the attack list, all of the attacks are done. So:
 
-                if (Vector3.Distance(DiceManager.GetCurrCharacter().gameObject.transform.position, _originalPos) > 0.1f)
+                if (_attackNum >= _attacks.Count - 1)
                 {
                     DiceManager.GetCurrCharacter().gameObject.transform.position = Vector3.MoveTowards(DiceManager.GetCurrCharacter().gameObject.transform.position, _originalPos, step);
+
+                    if (Vector3.Distance(DiceManager.GetCurrCharacter().gameObject.transform.position, _originalPos) > 0.1f)
+                    {
+                        DiceManager.GetCurrCharacter().gameObject.transform.position = Vector3.MoveTowards(DiceManager.GetCurrCharacter().gameObject.transform.position, _originalPos, step);
+                    }
+                    else
+                    {
+                        _startAttack = false;
+                        _hasMovedToAttackPos = false;
+                        _hasPlayedAttackAnim = false;
+
+                        //VERY IMPORTANT MAKE SURE THIS LINE IS IN EVERY ABILITY!!!
+                        GameObject.Find("AttackHolder").GetComponent<AttackHolder>().ClearAttacks();
+                        TurnManager.FinishAttack();
+                    }
                 }
                 else
                 {
-
-                    _startAttack = false;
+                    _startAttack = true;
                     _hasMovedToAttackPos = false;
                     _hasPlayedAttackAnim = false;
 
-                    //VERY IMPORTANT MAKE SURE THIS LINE IS IN EVERY ABILITY!!!
-                    TurnManager.FinishAttack();
+                    _attackNum++;
+
+                    ManageAttackAnimations();
                 }
             }
         }
@@ -140,17 +175,10 @@ public class ConfirmAttackButton : MonoBehaviour
 
             DiceManager.CurrCombatStage = DiceManager.CombatStage.ExecutingAttack;
 
-            GameObject diceCanvas = GameObject.Find("DiceCanvas");
+            _attacks = GameObject.Find("AttackHolder").GetComponent<AttackHolder>().GetAttacks();
+            _attackNum = 0;
 
-            //Manage attack animations
-            if (TurnManager.GetCurrTurnCharacter().tag.Contains("Player"))
-            {
-                GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("attack", true);
-            }
-            else
-            {
-                GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("attack", true);
-            }
+            ManageAttackAnimations();
         }
     }
 
@@ -196,6 +224,47 @@ public class ConfirmAttackButton : MonoBehaviour
                 string questionMarkName = "QuestionMark" + GameObject.Find("DiceCanvas").transform.GetChild(i).name.ToCharArray()[GameObject.Find("DiceCanvas").transform.GetChild(i).name.Length - 1];
                 GameObject.Find(questionMarkName).GetComponent<Image>().enabled = true;
             }
+        }
+    }
+
+    private string determineAnimationType(DiceType dT)
+    {
+        string returnString = null;
+
+        if (dT.GetName().Contains("Common"))
+        {
+            returnString = "defaultAttack";
+        }
+        else if (dT.GetName().Contains("Multiplier"))
+        {
+            returnString = "multiplierAttack";
+        }
+        else
+        {
+            returnString = "specialAttack";
+        }
+
+        Debug.Log("RETURN STRING " + returnString);
+        return returnString;
+    }
+
+    private void ManageAttackAnimations()
+    {
+        if (TurnManager.GetCurrTurnCharacter().tag.Contains("Player"))
+        {
+            Animator myAnim = GameObject.Find("Ayanda").GetComponent<Animator>();
+
+            myAnim.SetBool("defaultAttack", false);
+            myAnim.SetBool("specialAttack", false);
+            myAnim.SetBool("multiplierAttack", false);
+            myAnim.SetBool("attack", true);
+
+            DiceType myDiceType = DiceManager.SearchDiceType(_attacks[_attackNum].GetMyType());
+            GameObject.Find("Ayanda").GetComponent<Animator>().SetBool(determineAnimationType(myDiceType), true);
+        }
+        else
+        {
+            GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("attack", true);
         }
     }
 }

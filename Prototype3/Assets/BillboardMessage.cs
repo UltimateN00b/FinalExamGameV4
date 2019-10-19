@@ -11,11 +11,13 @@ public class BillboardMessage : MonoBehaviour
 
     public float fillRate = 0.1f;
     public float waitTime = 3.5f;
+    public float delayTime = 0.0f;
 
     private bool _fill;
     private bool _wait;
 
     private float _timer;
+    private float _delayTimer;
 
     private bool _showing;
 
@@ -46,13 +48,20 @@ public class BillboardMessage : MonoBehaviour
     {
         if (_fill)
         {
-            if (this.GetComponent<Image>().fillAmount < 1)
+            _delayTimer += Time.deltaTime;
+
+            if (_delayTimer > delayTime)
             {
-                this.GetComponent<Image>().fillAmount += fillRate;
-            } else
-            {
-                _fill = false;
-                _wait = true;
+                if (this.GetComponent<Image>().fillAmount < 1)
+                {
+                    this.GetComponent<Image>().fillAmount += fillRate;
+                }
+                else
+                {
+                    _fill = false;
+                    _wait = true;
+                    _delayTimer = 0.0f;
+                }
             }
         } else if (_wait)
         {

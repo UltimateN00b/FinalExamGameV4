@@ -45,18 +45,29 @@ public class MultiplierDice : MonoBehaviour
         string rollValueName = "RollValue" + Dice.LastDiceClicked().name.ToCharArray()[Dice.LastDiceClicked().name.Length - 1];
         GameObject.Find(rollValueName).GetComponent<Text>().text = diceRoll.ToString();
 
-        int rollTotal = int.Parse(GameObject.Find("RollTotal").GetComponent<Text>().text);
+        int rollAdd = 0;
 
-        int rollAdd = rollTotal * diceRoll - rollTotal;
+        for (int i = 1; i <= 3; i++)
+        {
+            string multiplyValueName = "RollValue"+i;
 
-        rollTotal *= diceRoll;
+            if (!multiplyValueName.Equals("RollValue" + Dice.LastDiceClicked().name.ToCharArray()[Dice.LastDiceClicked().name.Length - 1]))
+            {
+                int rollToMultiply = int.Parse(GameObject.Find(multiplyValueName).GetComponent<Text>().text);
 
-        GameObject.Find("RollTotal").GetComponent<Text>().text = rollTotal.ToString();
-        GameObject.Find("RollTotal").GetComponent<Text>().enabled = true;
+                rollAdd += rollToMultiply * diceRoll - rollToMultiply;
+
+                rollToMultiply *= diceRoll;
+
+                GameObject.Find(multiplyValueName).GetComponent<Text>().text = rollToMultiply.ToString();
+            }
+        }
 
         int attackTotal = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
         attackTotal += rollAdd;
+
         DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text = attackTotal.ToString();
+        GameObject.Find("AttackHolder").GetComponent<AttackHolder>().AddAttack(diceRoll, "Multiplier", rollAdd);
     }
 
     private void FreezeOnRoll(int num)

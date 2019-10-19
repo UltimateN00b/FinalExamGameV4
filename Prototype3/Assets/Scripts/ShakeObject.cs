@@ -14,11 +14,11 @@ public class ShakeObject : MonoBehaviour
     private Vector3 startPos;
 
     // Use this for initialization
+
     void Start()
     {
         shake = false;
         startPos = this.GetComponent<RectTransform>().position;
-
         Shake();
     }
 
@@ -44,5 +44,10 @@ public class ShakeObject : MonoBehaviour
     public bool IsShaking()
     {
         return shake;
+    }
+
+    public void SetStartPos()
+    {
+        startPos = this.GetComponent<RectTransform>().position;
     }
 }

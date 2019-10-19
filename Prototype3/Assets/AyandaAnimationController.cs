@@ -26,6 +26,9 @@ public class AyandaAnimationController : MonoBehaviour
     {
         Animator myAnim = this.GetComponent<Animator>();
         myAnim.SetBool("attack", false);
+        myAnim.SetBool("defaultAttack", false);
+        myAnim.SetBool("specialAttack", false);
+        myAnim.SetBool("multiplierAttack", false);
     }
 
     private void ControlAnimationsTest()
@@ -34,6 +37,7 @@ public class AyandaAnimationController : MonoBehaviour
         {
             Animator myAnim = this.GetComponent<Animator>();
             myAnim.SetBool("takingDamage", true);
+
         }
 
         if (Input.GetKeyDown(KeyCode.A))

@@ -63,8 +63,10 @@ public class HealthBar : MonoBehaviour
             } else
             {
                 GameObject.Find("ShadowEnemy").GetComponent<MyImage>().FadeOut();
+                Destroy(GameObject.Find("TutorialCase"));
                 TutorialManager.SetTutorialOver();
-                Invoke("LoadTutorialSleepMeterScene", 3.0f);
+
+                Invoke("LoadWakeup", 3.0f);
             }
         }
     }
@@ -110,7 +112,7 @@ public class HealthBar : MonoBehaviour
 
     private void LoadWakeup()
     {
-        SceneManager.LoadScene("WakeUpNarrative1");
+        SceneManager.LoadScene("TheNextDay1");
     }
 
     public static bool DeathOccurred()

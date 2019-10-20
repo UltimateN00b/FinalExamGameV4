@@ -22,7 +22,7 @@ public class NextDaySceneStarter : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        if (SceneManager.GetActiveScene().name.Contains("WakeUpNarrative"))
+        if (SceneManager.GetActiveScene().name.Contains("TheNextDay"))
         {
             _numDays++;
         }
@@ -30,6 +30,11 @@ public class NextDaySceneStarter : MonoBehaviour
 
     public static void NextDay()
     {
-        GameObject.Find("FadeCanvas 1").GetComponent<FadeCanvasLegacy>().ChangeScene("WakeUpNarrative" + _numDays);
+        GameObject.Find("FadeCanvas 1").GetComponent<FadeCanvasLegacy>().ChangeScene("TheNextDay" + _numDays);
+    }
+
+    public static int GetDayNum()
+    {
+        return _numDays;
     }
 }

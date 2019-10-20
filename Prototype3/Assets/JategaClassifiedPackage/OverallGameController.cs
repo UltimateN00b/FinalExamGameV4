@@ -8,6 +8,7 @@ public class OverallGameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _instructionsCanvas = GameObject.Find("InstructionsCanvas");
+        _instructionsCanvas.GetComponent<EscapeMenuManager>().UpdateAyandaSleep();
         _instructionsCanvas.SetActive(false);
 	}
 	

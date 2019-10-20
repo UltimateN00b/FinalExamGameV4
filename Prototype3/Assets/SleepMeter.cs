@@ -18,6 +18,8 @@ public class SleepMeter : MonoBehaviour
         _fightOutcomeString = "";
         _initialValue = this.GetComponent<Slider>().value;
         DontDestroyOnLoad(this.transform.parent.gameObject);
+
+        Hide();
     }
 
     private void OnLevelWasLoaded(int level)
@@ -30,7 +32,7 @@ public class SleepMeter : MonoBehaviour
         if (SceneManager.GetActiveScene().name.Contains("Narrative"))
         {
             _initialValue = this.GetComponent<Slider>().value;
-            Show();
+            //Show();
         }
         else
         {

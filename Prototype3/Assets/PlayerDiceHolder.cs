@@ -7,8 +7,8 @@ public class PlayerDiceHolder : MonoBehaviour
 {
 
     private static string dice1 = "Common";
-    private static string dice2 = "Common";
-    private static string dice3 = "Common";
+    private static string dice2 = "Empty";
+    private static string dice3 = "Empty";
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,8 @@ public class PlayerDiceHolder : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         dice1 = "Common";
-        dice2 = "Common";
-        dice3 = "Common";
+        dice2 = "Empty";
+        dice3 = "Empty";
     }
 
     // Update is called once per frame

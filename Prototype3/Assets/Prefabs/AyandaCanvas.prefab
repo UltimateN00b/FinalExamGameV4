@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 5150998648629314085}
   - component: {fileID: 5150998648629314087}
   - component: {fileID: 5150998648629314086}
+  - component: {fileID: 2032459965}
   m_Layer: 5
   m_Name: AyandaImage
   m_TagString: Untagged
@@ -133,7 +134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -315, y: -86}
+  m_AnchoredPosition: {x: -318.5, y: -97.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5150998648629314087
@@ -151,21 +152,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5150998648629314084}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 210e455fc80cd2045a640d0540a790fb, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -173,3 +174,25 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &2032459965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150998648629314084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ffc9e5750293a74aa2df81cb4ec5020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myExpressions:
+  - {fileID: 21300000, guid: e3ed3266935c50749bf1d3ab64d684b4, type: 3}
+  - {fileID: 21300000, guid: a1f0d80d63ae3a74baaa86cb57a2a36f, type: 3}
+  - {fileID: 21300000, guid: 7e3328761c0d68f4fbc35dcbce6d75a7, type: 3}
+  - {fileID: 21300000, guid: 8774f905b8d0ce549bb0424c571cb2ab, type: 3}
+  - {fileID: 21300000, guid: 0b86960a5b98cbd44b2f7c45da3bbbf1, type: 3}
+  - {fileID: 21300000, guid: 82e69cd980512af4d847650176ec92f2, type: 3}
+  leftPos: 0
+  centerPos: 0
+  rightPos: 0

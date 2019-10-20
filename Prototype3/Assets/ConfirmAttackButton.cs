@@ -77,7 +77,10 @@ public class ConfirmAttackButton : MonoBehaviour
                         }
                         else
                         {
-                            GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("takingDamage", true);
+                            if (!TutorialManager.IsTutorial())
+                            {
+                                GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("takingDamage", true);
+                            }
                         }
 
                         //Manage particle effects
@@ -180,6 +183,11 @@ public class ConfirmAttackButton : MonoBehaviour
 
             ManageAttackAnimations();
         }
+
+        if (TutorialManager.IsTutorial() && !TutorialManager.AttackButtonFirstClicked())
+        {
+            GameObject.Find("TutorialManager").GetComponent<TutorialManager>().FadeTutorial();
+        }
     }
 
     public void HideUI()
@@ -264,7 +272,10 @@ public class ConfirmAttackButton : MonoBehaviour
         }
         else
         {
-            GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("attack", true);
+            if (!TutorialManager.IsTutorial())
+            {
+                GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("attack", true);
+            }
         }
     }
 }

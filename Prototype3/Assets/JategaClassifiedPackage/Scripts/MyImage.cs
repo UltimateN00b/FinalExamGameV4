@@ -7,15 +7,21 @@ public class MyImage : MonoBehaviour
 {
 
     public float fadeAmount;
+    public bool fadeOnStart = false;
+
     private UnityEvent m_ReturnToImage;
 
     private bool _fadeIn;
     private bool _fadeOut;
-
+    
     private void Start()
     {
         _fadeIn = false;
         _fadeOut = false;
+        if (fadeOnStart)
+        {
+            FadeIn();
+        }
     }
 
     private void Update()

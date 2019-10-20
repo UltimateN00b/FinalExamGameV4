@@ -252,17 +252,7 @@ public class DialogueBox : MonoBehaviour
                 print("!!!SPEAKING CHARACTER IS NOT IN THE SCENE");
             }
 
-            if (GameObject.Find("AyandaImage") != null)
-            {
-                if (currSpeakingCharacter.Equals("Ayanda"))
-                {
-                    GameObject.Find("AyandaImage").GetComponent<Image>().enabled = true;
-                }
-                else
-                {
-                    GameObject.Find("AyandaImage").GetComponent<Image>().enabled = false;
-                }
-            }
+            //Ayanda no longer appears on screen - but if he did, you could add his old code back in here.
 
                 if (currNode.HasChoice())
             {

@@ -43,7 +43,7 @@ public class HealthBar : MonoBehaviour
                 overkillIndicator.GetComponent<OverkillIndicator>().ShowOverkill((int)(TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP()));
             }
 
-            if (!SceneManager.GetActiveScene().name.Contains("NightmareTutorial"))
+            if (!TutorialManager.IsTutorial())
             {
                 sleepMeter.GetComponent<SleepMeter>().UpdateSleepValue();
 
@@ -58,9 +58,13 @@ public class HealthBar : MonoBehaviour
                     //SceneManager.LoadScene("YouLose");
                     Invoke("LoadLoseScene", 3.0f);
                 }
+
+                TutorialManager.MarkTutorialPlayed();
             } else
             {
-                SceneManager.LoadScene("SleepMeterInstructions");
+                GameObject.Find("ShadowEnemy").GetComponent<MyImage>().FadeOut();
+                TutorialManager.SetTutorialOver();
+                Invoke("LoadTutorialSleepMeterScene", 3.0f);
             }
         }
     }
@@ -102,6 +106,11 @@ public class HealthBar : MonoBehaviour
     private void LoadLoseScene()
     {
         SceneManager.LoadScene("YouLose");
+    }
+
+    private void LoadWakeup()
+    {
+        SceneManager.LoadScene("WakeUpNarrative1");
     }
 
     public static bool DeathOccurred()

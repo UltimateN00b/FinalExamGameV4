@@ -185,7 +185,10 @@ public class DiceManager : MonoBehaviour
                         GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("dying", true);
                     } else
                     {
-                        GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("dying", true);
+                        if (!TutorialManager.IsTutorial())
+                        {
+                            GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("dying", true);
+                        }
                     }
                 }
             }

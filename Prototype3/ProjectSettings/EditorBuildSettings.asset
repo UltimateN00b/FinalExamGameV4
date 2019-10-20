@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: de40af7c87668ec4f9fa55f1dcd9729d
   - enabled: 1
     path: Assets/Scenes/Cutscenes/OpeningCutscene.unity
-    guid: b28f78c88afe4904da2ae0f7613a0bf9
+    guid: 3cafceb8da9ebb541a9a525eb86d6fa6
   - enabled: 1
     path: Assets/Scenes/Instructions/CombatInstructions.unity
     guid: cb92555d25beed644bd0a738e0ec80fb

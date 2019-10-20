@@ -76,9 +76,12 @@ public class Dice : MonoBehaviour
         {
             if (!DiceManager.CanReset())
             {
-                GameObject.Find("NewRollImage").GetComponent<BillboardMessage>().ShowMessage();
-                DiceManager.SetCanReset(true);
-                _numDiceStopped = 0;
+                if (!TutorialManager.IsTutorial() || TutorialManager.CanRollMultiple())
+                {
+                    GameObject.Find("NewRollImage").GetComponent<BillboardMessage>().ShowMessage();
+                    DiceManager.SetCanReset(true);
+                    _numDiceStopped = 0;
+                }
             }
         }
 
@@ -105,7 +108,8 @@ public class Dice : MonoBehaviour
             m_OnDiceStopped = myDiceType.GetOnStoppedEvent();
             m_OnAttack = myDiceType.GetOnAttackEvent();
             m_OnStatusEffect = myDiceType.GetOnStatusEvent();
-        } else
+        }
+        else
         {
             this.gameObject.SetActive(false);
         }
@@ -115,29 +119,36 @@ public class Dice : MonoBehaviour
 
     public void OnDiceClicked()
     {
-            if (DiceManager.CurrCombatStage == DiceManager.CombatStage.DiceAndTargets)
+        if (DiceManager.CurrCombatStage == DiceManager.CombatStage.DiceAndTargets)
+        {
+            _stopped = true;
+
+            _beenClicked = true;
+
+            _lastDiceClicked = this.gameObject;
+
+            this.GetComponent<ShakeObject>().StopShaking();
+
+            _numDiceStopped++;
+
+            string questionMarkName = "QuestionMark" + this.name.ToCharArray()[this.name.Length - 1];
+            GameObject.Find(questionMarkName).GetComponent<Image>().enabled = false;
+
+            if (!DiceManager.GetCurrCharacter().tag.Contains("Enemy"))
             {
-                _stopped = true;
-
-                _beenClicked = true;
-
-                _lastDiceClicked = this.gameObject;
-
-                this.GetComponent<ShakeObject>().StopShaking();
-
-                _numDiceStopped++;
-
-                string questionMarkName = "QuestionMark" + this.name.ToCharArray()[this.name.Length - 1];
-                GameObject.Find(questionMarkName).GetComponent<Image>().enabled = false;
-
-                if (!DiceManager.GetCurrCharacter().tag.Contains("Enemy"))
-                {
-                    AudioManager.PlaySound(Resources.Load("Dice roll") as AudioClip);
-                    m_OnDiceStopped.Invoke();
-                }
-
-                this.GetComponent<Button>().enabled = false;
+                AudioManager.PlaySound(Resources.Load("Dice roll") as AudioClip);
+                m_OnDiceStopped.Invoke();
             }
+
+            this.GetComponent<Button>().enabled = false;
+
+            if (TutorialManager.IsTutorial() && !TutorialManager.FirstDiceRolled())
+            {
+                GameObject.Find("TutorialManager").GetComponent<TutorialManager>().ShowTutorial("TutorialAttacking");
+                TutorialManager.SetFirstDiceRolled();
+            }
+
+        }
     }
 
 
@@ -177,6 +188,7 @@ public class Dice : MonoBehaviour
 
                 this.GetComponent<ShakeObject>().StopShaking();
                 string questionMarkName = "QuestionMark" + this.name.ToCharArray()[this.name.Length - 1];
+
                 GameObject.Find(questionMarkName).GetComponent<Image>().enabled = false;
 
                 AudioManager.PlaySound(Resources.Load("Dice roll") as AudioClip);
@@ -184,7 +196,7 @@ public class Dice : MonoBehaviour
 
                 this.GetComponent<Button>().enabled = false;
             }
-        } 
+        }
     }
 
     public void ParalyseDice()
@@ -212,38 +224,42 @@ public class Dice : MonoBehaviour
     {
 
         string questionMarkName = "QuestionMark" + this.name.ToCharArray()[this.name.Length - 1];
-        GameObject.Find(questionMarkName).GetComponent<QuestionMarkDice>().ChangeToQuestionMark();
-        GameObject.Find(questionMarkName).GetComponent<Image>().enabled = true;
+        if (GameObject.Find(questionMarkName) != null)
+        {
+            GameObject.Find(questionMarkName).GetComponent<QuestionMarkDice>().ChangeToQuestionMark();
+            GameObject.Find(questionMarkName).GetComponent<Image>().enabled = true;
 
-        _paralysed = false;
+            _paralysed = false;
+        }
+
     }
 
     private void MoveAndResetDice()
     {
         //Uncomment this to get fall animation back!
-            //if (!_hasMovedDown)
-            //{
-            ////Move dice until it has reached its target
-            //if (this.GetComponent<ShakeObject>().IsShaking())
-            //{
-            //    this.GetComponent<ShakeObject>().StopShaking();
-            //}
+        //if (!_hasMovedDown)
+        //{
+        ////Move dice until it has reached its target
+        //if (this.GetComponent<ShakeObject>().IsShaking())
+        //{
+        //    this.GetComponent<ShakeObject>().StopShaking();
+        //}
 
-            //MoveDown();
-            //}
-            //else
-            //{
+        //MoveDown();
+        //}
+        //else
+        //{
 
-            //Reset roll values
-            DiceManager.ResetRollValues();
+        //Reset roll values
+        DiceManager.ResetRollValues();
 
-            //Reset dice position and question marks and start shaking
-            ResetDice();
+        //Reset dice position and question marks and start shaking
+        ResetDice();
 
-            //Set necessary variables back to false
+        //Set necessary variables back to false
 
-            _hasMovedDown = false;
-            _resetDice = false;
+        _hasMovedDown = false;
+        _resetDice = false;
         //}
     }
 
@@ -280,8 +296,8 @@ public class Dice : MonoBehaviour
 
         //Start shaking
 
-            this.GetComponent<ShakeObject>().Shake();
-            _stopped = false;
+        this.GetComponent<ShakeObject>().Shake();
+        _stopped = false;
 
         this.GetComponent<Animator>().enabled = true;
 

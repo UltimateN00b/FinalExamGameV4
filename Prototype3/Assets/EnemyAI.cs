@@ -68,7 +68,17 @@ public class EnemyAI : MonoBehaviour
                 currDice.GetComponent<Dice>().ManuallyClickDice();
                 _firstRollTaken = true;
 
-                if (_diceNum < GameObject.Find("DiceCanvas").transform.childCount-1)
+                int numActiveDice = 0;
+
+                for (int i = 0; i < GameObject.Find("DiceCanvas").transform.childCount; i++)
+                {
+                    if (GameObject.Find("DiceCanvas").transform.GetChild(i).gameObject.activeInHierarchy)
+                    {
+                        numActiveDice++;
+                    }
+                }
+
+                if (_diceNum < numActiveDice - 1)
                 {
                     _diceNum++;
                 } else
@@ -93,6 +103,8 @@ public class EnemyAI : MonoBehaviour
 
             Debug.Log("EXECUTE ENEMY AI CALLED");
         }
+
+        TutorialManager.SetCanRollMultipleTrue();
     }
 
     public void CeaseEnemyAI()

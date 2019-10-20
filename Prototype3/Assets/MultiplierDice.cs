@@ -51,15 +51,24 @@ public class MultiplierDice : MonoBehaviour
         {
             string multiplyValueName = "RollValue"+i;
 
-            if (!multiplyValueName.Equals("RollValue" + Dice.LastDiceClicked().name.ToCharArray()[Dice.LastDiceClicked().name.Length - 1]))
+            if (GameObject.Find(multiplyValueName) != null)
             {
-                int rollToMultiply = int.Parse(GameObject.Find(multiplyValueName).GetComponent<Text>().text);
+                if (!multiplyValueName.Equals("RollValue" + Dice.LastDiceClicked().name.ToCharArray()[Dice.LastDiceClicked().name.Length - 1]))
+                {
+                    int rollToMultiply = 0;
+                    int isNumberCheck;
 
-                rollAdd += rollToMultiply * diceRoll - rollToMultiply;
+                    if (int.TryParse(GameObject.Find(multiplyValueName).GetComponent<Text>().text, out isNumberCheck))
+                    {
+                        rollToMultiply = int.Parse(GameObject.Find(multiplyValueName).GetComponent<Text>().text);
+                    }
 
-                rollToMultiply *= diceRoll;
+                    rollAdd += rollToMultiply * diceRoll - rollToMultiply;
 
-                GameObject.Find(multiplyValueName).GetComponent<Text>().text = rollToMultiply.ToString();
+                    rollToMultiply *= diceRoll;
+
+                    GameObject.Find(multiplyValueName).GetComponent<Text>().text = rollToMultiply.ToString();
+                }
             }
         }
 

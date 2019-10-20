@@ -166,6 +166,7 @@ public class TurnManager : MonoBehaviour
 
         _currTurnCharacter.GetComponent<Character>().SetMyTurn();
 
+        TutorialManager.SetFirstRoundFinished();
     }
 
     public static GameObject GetCurrTurnCharacter()

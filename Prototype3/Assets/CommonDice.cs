@@ -24,11 +24,30 @@ public class CommonDice : MonoBehaviour
 
         GameObject.Find("ClickTheDice").GetComponent<Text>().text = "DICE VALUES: ";
 
-        if (diceRoll == 1)
+        if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy")&& TutorialManager.IsTutorial())
+        {
+                if (TutorialManager.LastTutorialShown())
+                {
+                    diceRoll = 1;
+                }
+                else
+                {
+                    diceRoll = 6;
+                }
+        }
+        else if (diceRoll == 1)
         {
             if (DiceManager.GetNumPlayerRolls() <= 3)
             {
                 diceRoll = 2;
+            }
+        }
+
+        if (TutorialManager.IsTutorial() && TutorialManager.FirstDiceRolled())
+        {
+            if (DiceManager.GetNumPlayerRolls() == 2)
+            {
+                diceRoll = 1;
             }
         }
 

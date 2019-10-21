@@ -4280,6 +4280,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7356504798834137805}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &585306441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585306440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6c80c0edd863744b98834595ab6889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &594750472
 GameObject:
   m_ObjectHideFlags: 0
@@ -9602,7 +9614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1210153352951168, guid: 8f805010e66def44f99594f9b2491787, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224930315571803934, guid: 8f805010e66def44f99594f9b2491787,
         type: 3}
@@ -10298,6 +10310,7 @@ GameObject:
   - component: {fileID: 1464796173}
   - component: {fileID: 1464796174}
   - component: {fileID: 1464796176}
+  - component: {fileID: 1464796178}
   m_Layer: 0
   m_Name: DiceTypeManager
   m_TagString: Untagged
@@ -10641,6 +10654,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1464796178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464796166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfeb1f43ec06919438d41b4159d98d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1474605478
 GameObject:
   m_ObjectHideFlags: 0
@@ -14545,7 +14570,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6769111273864272597, guid: 821421d380bf09b4ca9b636d5cc1103f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 821421d380bf09b4ca9b636d5cc1103f, type: 3}
 --- !u!114 &7388499479726314237
 MonoBehaviour:

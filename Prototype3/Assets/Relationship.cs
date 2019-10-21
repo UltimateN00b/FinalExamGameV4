@@ -17,9 +17,9 @@ public class Relationship : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _currLevel = 1;
+        _currLevel = 0;
         _currProgressToNextLevel = startingProgressToNextLevel;
-        _discovered = false;
+        _discovered = true;
     }
 
     // Update is called once per frame
@@ -64,8 +64,12 @@ public class Relationship : MonoBehaviour
 
     public void SetDiscovered()
     {
-        GameObject.Find("OverallController").GetComponent<OverallGameController>().GetInstructionsCanvas().GetComponent<EscapeMenuManager>().UpdateAllRelationships();
-        _discovered = true;
+        if (!_discovered)
+        {
+            _discovered = true;
+            GameObject.Find("OverallController").GetComponent<OverallGameController>().GetInstructionsCanvas().GetComponent<EscapeMenuManager>().UpdateAllRelationships();
+            GameObject.Find("CharacterInfoUpdated").GetComponent<BillboardMessage>().ShowMessage();
+        }
     }
 
     public bool HasBeenDiscovered()

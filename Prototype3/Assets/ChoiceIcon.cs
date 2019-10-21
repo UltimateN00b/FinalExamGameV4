@@ -33,7 +33,18 @@ public class ChoiceIcon : MonoBehaviour
 
         if (searchIcon != null)
         {
+            if (spriteName.ToUpper().Contains("BAD"))
+            {
+                this.GetComponent<Animator>().enabled = false;
+                this.GetComponent<Image>().color = Color.white;
+            } else
+            {
+                this.GetComponent<Animator>().enabled = true;
+                this.GetComponent<Image>().color = Color.black;
+            }
+
             this.GetComponent<Image>().sprite = searchIcon;
+
         } else
         {
             Debug.Log("Search Icon Equals Null");

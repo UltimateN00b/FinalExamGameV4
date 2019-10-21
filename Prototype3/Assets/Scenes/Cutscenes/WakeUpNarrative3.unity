@@ -1795,6 +1795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!1 &141414896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2305,6 +2306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.05
+  fadeOnStart: 0
 --- !u!212 &152053312
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3735,6 +3737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!1 &237240140
 GameObject:
   m_ObjectHideFlags: 0
@@ -4285,6 +4288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &248308946
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6289,6 +6293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &392352963
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6899,6 +6904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!114 &416761301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7836,6 +7842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!1 &466431918
 GameObject:
   m_ObjectHideFlags: 0
@@ -13442,6 +13449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.05
+  fadeOnStart: 0
 --- !u!114 &716162987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15847,6 +15855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &836595123
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16099,6 +16108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &856521599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20095,7 +20105,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00021260955, y: 0.000030593434}
+  m_AnchoredPosition: {x: 0.00010849851, y: 0.000010160198}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302
@@ -23295,6 +23305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!114 &1296088312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23681,6 +23692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!1 &1298225312
 GameObject:
   m_ObjectHideFlags: 0
@@ -25602,6 +25614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &1395011665
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31681,6 +31694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &1814586828
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33228,6 +33242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &1885759177
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33830,6 +33845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!114 &1903088735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35670,6 +35686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &2067367423
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36782,6 +36799,7 @@ GameObject:
   - component: {fileID: 2123480497}
   - component: {fileID: 2123480496}
   - component: {fileID: 2123480495}
+  - component: {fileID: 2123480498}
   m_Layer: 5
   m_Name: Main_36
   m_TagString: Main
@@ -36827,9 +36845,9 @@ MonoBehaviour:
   m_OnClicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1333599661}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2123480498}
+        m_MethodName: MyQuit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -36837,17 +36855,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: Menu
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1333599662}
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Menu
-          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -36901,6 +36908,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123480493}
   m_CullTransparentMesh: 0
+--- !u!114 &2123480498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123480493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f065fa3df086399408c2149aecb437e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2125560284
 GameObject:
   m_ObjectHideFlags: 0

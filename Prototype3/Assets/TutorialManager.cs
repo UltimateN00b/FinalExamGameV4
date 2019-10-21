@@ -21,15 +21,21 @@ public class TutorialManager : MonoBehaviour
     private static bool _attackButtonFirstClicked;
     private static bool _firstRoundFinished;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnLevelWasLoaded(int level)
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (NextDaySceneStarter.GetDayNum() == 0)
+        {
+            _tutorial = true;
+        } else
+        {
+            _tutorial = false;
+        }
+
+        //Was on start
 
         _hasToShowTutorial = false;
         _checkTimer = 0;
-
-        _tutorial = true;
 
         if (m_OnTutorialStart == null)
         {
@@ -40,6 +46,11 @@ public class TutorialManager : MonoBehaviour
         {
             m_OnTutorialStart.Invoke();
         }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
     }
 
     // Update is called once per frame
@@ -127,39 +138,41 @@ public class TutorialManager : MonoBehaviour
     //NOTE: THIS TUTORIAL SYSTEM REQUIRES THAT THE SPRITE NAMES MATCH THE TUTORIAL NAMES!
     public void ShowTutorial(string tutorialName)
     {
-
-        if (this.GetComponent<SpriteRenderer>().color.a >= 1)
+        if (_tutorial)
         {
-            foreach (Tutorial tut in this.gameObject.GetComponents<Tutorial>())
+            if (this.GetComponent<SpriteRenderer>().color.a >= 1)
             {
-                if (tut.GetTutorialName().ToUpper().Contains(this.GetComponent<SpriteRenderer>().name.ToUpper()))
+                foreach (Tutorial tut in this.gameObject.GetComponents<Tutorial>())
                 {
-                    tut.CallClosingTutorialEvent();
+                    if (tut.GetTutorialName().ToUpper().Contains(this.GetComponent<SpriteRenderer>().name.ToUpper()))
+                    {
+                        tut.CallClosingTutorialEvent();
+                    }
                 }
             }
-        }
 
-        _hasToShowTutorial = true;
-        _checkTimer = 0.0f;
+            _hasToShowTutorial = true;
+            _checkTimer = 0.0f;
 
-        foreach (Sprite s in tutorialImages)
-        {
-            if (s.name.ToUpper().Contains(tutorialName.ToUpper()))
+            foreach (Sprite s in tutorialImages)
             {
-                this.transform.GetComponent<SpriteRenderer>().sprite = s;
+                if (s.name.ToUpper().Contains(tutorialName.ToUpper()))
+                {
+                    this.transform.GetComponent<SpriteRenderer>().sprite = s;
+                }
             }
-        }
 
-        foreach (Tutorial tut in this.gameObject.GetComponents<Tutorial>())
-        {
-            if (tut.GetTutorialName().ToUpper().Contains(tutorialName.ToUpper()))
+            foreach (Tutorial tut in this.gameObject.GetComponents<Tutorial>())
             {
-                tut.CallOpeningTutorialEvent();
+                if (tut.GetTutorialName().ToUpper().Contains(tutorialName.ToUpper()))
+                {
+                    tut.CallOpeningTutorialEvent();
+                }
             }
-        }
 
-        this.GetComponent<MyImage>().FadeIn();
-        this.transform.GetChild(0).GetComponent<MyImage>().FadeIn();
+            this.GetComponent<MyImage>().FadeIn();
+            this.transform.GetChild(0).GetComponent<MyImage>().FadeIn();
+        }
     }
 
     public void FadeTutorial()

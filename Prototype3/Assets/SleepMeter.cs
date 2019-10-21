@@ -85,46 +85,27 @@ public class SleepMeter : MonoBehaviour
 
         if (player.GetCurrHP() > 0)
         {
-            winnersHealth = player.GetCurrHP() / player.hp;
-
-            if (Mathf.Abs(enemy.GetCurrHP()) < enemy.hp)
-            {
-                losersHealth = enemy.GetCurrHP() / enemy.hp;
-            }
-            else
-            {
-                losersHealth = 1;
-            }
-
+            winnersHealth = player.GetCurrHP() / player.hp;  
         } else
         {
             winnersHealth = enemy.GetCurrHP() / enemy.hp;
-
-            if (Mathf.Abs(player.GetCurrHP()) < player.hp)
-            {
-                losersHealth = player.GetCurrHP() / player.hp;
-            }
-            else
-            {
-                losersHealth = 1;
-            }
         }
 
         _amountChanged = Mathf.Abs(winnersHealth) + Mathf.Abs(losersHealth);
-        _amountChanged = _amountChanged * 0.5f;
+        _amountChanged = _amountChanged * 0.2f;
 
         //Change the slider value and output string.
         if (player.GetCurrHP() > 0)
         {
             Debug.Log("AMOUNT CHANGED " + _amountChanged);
 
-            _fightOutcomeString = "Your sleep quality has improved!";
+            _fightOutcomeString = "Your sleep quality has improved!\nAyanda is feeling REPLACETHIS";
         }
         else
         {
             Debug.Log("AMOUNT CHANGED " + _amountChanged);
 
-            _fightOutcomeString = "Your sleep quality has declined.";
+            _fightOutcomeString = "Your sleep quality has declined.\nAyanda is feeling REPLACETHIS";
         }
            
       }
@@ -133,9 +114,11 @@ public class SleepMeter : MonoBehaviour
     {
         Debug.Log("SHOULD SHOW WIN TEXT");
 
-        GameObject.Find("SleepText").GetComponent<Text>().text = _fightOutcomeString;
-
-        if (SceneManager.GetActiveScene().name.Contains("Win"))
+        if (NextDaySceneStarter.GetDayNum() == 0)
+        {
+            GameObject.Find("SM_Superficial").GetComponent<SleepMeterSuperficial>().PlaySliderAnimation(_initialValue, this.GetComponent<Slider>().value + 0);
+            Utilities.SearchChild("SleepMeter", GameObject.Find("SleepMeterCanvas")).GetComponent<Slider>().value = 0.5f;
+        }else if (SceneManager.GetActiveScene().name.Contains("Win"))
         {
             GameObject.Find("SM_Superficial").GetComponent<SleepMeterSuperficial>().PlaySliderAnimation(_initialValue, this.GetComponent<Slider>().value + _amountChanged);
             Utilities.SearchChild("SleepMeter", GameObject.Find("SleepMeterCanvas")).GetComponent<Slider>().value = this.GetComponent<Slider>().value + _amountChanged;
@@ -144,6 +127,33 @@ public class SleepMeter : MonoBehaviour
             GameObject.Find("SM_Superficial").GetComponent<SleepMeterSuperficial>().PlaySliderAnimation(_initialValue, this.GetComponent<Slider>().value - _amountChanged);
             Utilities.SearchChild("SleepMeter", GameObject.Find("SleepMeterCanvas")).GetComponent<Slider>().value = this.GetComponent<Slider>().value - _amountChanged;
         }
+
+        _fightOutcomeString = _fightOutcomeString.Replace("REPLACETHIS", CalculateAyandaFeeling(Utilities.SearchChild("SleepMeter", GameObject.Find("SleepMeterCanvas")).GetComponent<Slider>().value));
+        GameObject.Find("SleepText").GetComponent<Text>().text = _fightOutcomeString;
+    }
+
+    private string CalculateAyandaFeeling(float sleepMeterValue)
+    {
+        string sleepString = "EXHAUSTED";
+
+        if (sleepMeterValue <= 1 && sleepMeterValue >= 0.8f)
+        {
+            sleepString = "ENERGISED";
+        }
+        else if (sleepMeterValue <= 0.79f && sleepMeterValue >= 0.6f)
+        {
+            sleepString = "RESTED";
+        }
+        else if (sleepMeterValue <= 0.59f && sleepMeterValue >= 0.4f)
+        {
+            sleepString = "AWAKE...ish";
+        }
+        else if (sleepMeterValue <= 0.39f && sleepMeterValue >= 0.2f)
+        {
+            sleepString = "TIRED";
+        }
+        
+        return sleepString;
     }
 
 }

@@ -1907,6 +1907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!1 &141414896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,6 +2301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.05
+  fadeOnStart: 0
 --- !u!212 &152053312
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3094,6 +3096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!1 &237240140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3299,6 +3302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &248308946
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5129,6 +5133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &392352963
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5540,6 +5545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!114 &416761301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6286,6 +6292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!1 &466431918
 GameObject:
   m_ObjectHideFlags: 0
@@ -10692,6 +10699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.05
+  fadeOnStart: 0
 --- !u!114 &716162987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12031,6 +12039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &836595123
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12186,6 +12195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.01
+  fadeOnStart: 0
 --- !u!1 &844043319
 GameObject:
   m_ObjectHideFlags: 0
@@ -12376,6 +12386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &856521599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15299,7 +15310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00019402715, y: 0.0000063554658}
+  m_AnchoredPosition: {x: 0.000074558324, y: -0.000020841942}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302
@@ -17690,6 +17701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!114 &1296088312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18076,6 +18088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!4 &1301635044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4401966089815654, guid: b5d28eeb9706fd54ab70688e134bb5ac,
@@ -19251,7 +19264,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: It's MoNsTRouS...
+  m_Text: It's M O N S T R O U S...
 --- !u!222 &1355197535
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19549,6 +19562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &1395011665
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21309,6 +21323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.01
+  fadeOnStart: 0
 --- !u!114 &1563618981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22171,6 +22186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &1599817575
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24307,6 +24323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &1814586828
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25279,6 +25296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &1885759177
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25656,6 +25674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!114 &1903088735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26574,6 +26593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
+  fadeOnStart: 0
 --- !u!212 &2067367423
 SpriteRenderer:
   m_ObjectHideFlags: 0

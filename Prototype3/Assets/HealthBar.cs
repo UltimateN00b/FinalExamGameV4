@@ -65,8 +65,6 @@ public class HealthBar : MonoBehaviour
                 GameObject.Find("ShadowEnemy").GetComponent<MyImage>().FadeOut();
                 Destroy(GameObject.Find("TutorialCase"));
                 TutorialManager.SetTutorialOver();
-
-                Invoke("LoadWakeup", 3.0f);
             }
         }
     }
@@ -108,11 +106,6 @@ public class HealthBar : MonoBehaviour
     private void LoadLoseScene()
     {
         SceneManager.LoadScene("YouLose");
-    }
-
-    private void LoadWakeup()
-    {
-        SceneManager.LoadScene("TheNextDay1");
     }
 
     public static bool DeathOccurred()

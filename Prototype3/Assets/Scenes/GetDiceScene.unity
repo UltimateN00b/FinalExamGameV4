@@ -1107,7 +1107,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &764314525
 RectTransform:
@@ -1222,7 +1222,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &885572556
 RectTransform:
@@ -2111,7 +2111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Joey
   characterImage: {fileID: 21300000, guid: ea274982e3ffc5d458a1b2a260389b08, type: 3}
-  unlockLevels: 0200000003000000
+  unlockLevels: 0100000002000000
   diceTypes:
   - Multiplier
   - LifeSteal
@@ -2129,7 +2129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Lana
   characterImage: {fileID: 21300000, guid: 69050a23162da2f418bd3c3a29e6a6f9, type: 3}
-  unlockLevels: 0300000006000000
+  unlockLevels: 0200000003000000
   diceTypes:
   - Poison
   - SleepParalysis
@@ -2626,7 +2626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1210153352951168, guid: 8f805010e66def44f99594f9b2491787, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224930315571803934, guid: 8f805010e66def44f99594f9b2491787,
         type: 3}
@@ -2733,6 +2733,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 223601271400544756, guid: 8f805010e66def44f99594f9b2491787,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114529416383217192, guid: 8f805010e66def44f99594f9b2491787, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8f805010e66def44f99594f9b2491787, type: 3}
@@ -2834,7 +2839,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!224 &1373361417
 RectTransform:

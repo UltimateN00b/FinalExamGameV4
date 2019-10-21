@@ -19,7 +19,7 @@ public class SleepParalysisDice : MonoBehaviour
     public void OnStopped()
     {
         Random.InitState((int)System.DateTime.Now.Ticks);
-        int diceRoll = Random.Range(1, 5);
+        int diceRoll = DiceRollCalculator.CalculateDiceRollFour();
 
         GameObject.Find("ClickTheDice").GetComponent<Text>().text = "DICE VALUES: ";
 

@@ -34,8 +34,6 @@ public class SatchelScreen : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        print("IS PRESENTATION: " + _isPresentationMode);
-
         if (_isVisible)
         {
             if (InventoryItem.MouseOverInventoryItem())

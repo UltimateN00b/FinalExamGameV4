@@ -5,12 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class NextDaySceneStarter : MonoBehaviour
 {
-    private static int _numDays;
+    private static int _numDays = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        _numDays = 1;
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -22,6 +21,7 @@ public class NextDaySceneStarter : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
+        Debug.Log("CURR NUM DAYS: " + _numDays);
         if (SceneManager.GetActiveScene().name.Contains("TheNextDay"))
         {
             _numDays++;
@@ -30,7 +30,8 @@ public class NextDaySceneStarter : MonoBehaviour
 
     public static void NextDay()
     {
-        GameObject.Find("FadeCanvas 1").GetComponent<FadeCanvasLegacy>().ChangeScene("TheNextDay" + _numDays);
+        int upcomingNumDays = _numDays + 1;
+        GameObject.Find("FadeCanvas 1").GetComponent<FadeCanvasLegacy>().ChangeScene("TheNextDay" + upcomingNumDays);
     }
 
     public static int GetDayNum()

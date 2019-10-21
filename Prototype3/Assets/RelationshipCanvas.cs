@@ -21,11 +21,15 @@ public class RelationshipCanvas : MonoBehaviour
     private int _levelStringLength;
     private bool _hasUpdatedLevelStringLength;
 
+    public GameObject happyParticles;
+    public GameObject upsetParticles;
+
     // Start is called before the first frame update
     private void Awake()
     {
         _levelStringLength = 1;
         _hasUpdatedLevelStringLength = false;
+        Hide();
     }
     void Start()
     {
@@ -91,8 +95,6 @@ public class RelationshipCanvas : MonoBehaviour
 
                 //Set curr relationship back to null
                 _currRelationship = null;
-
-                GameObject.Find("OverallController").GetComponent<OverallGameController>().GetInstructionsCanvas().GetComponent<EscapeMenuManager>().UpdateAllRelationships();
             }
         }
 
@@ -151,12 +153,19 @@ public class RelationshipCanvas : MonoBehaviour
             GameObject relationshipBar = Utilities.SearchChild("RelationshipBar", this.gameObject);
             _reachAmount = relationshipBar.GetComponent<Image>().fillAmount + changeAmount;
 
+            Vector3 particlePos = GameObject.Find(_currRelationship.GetCharacterName() + "_ChatBot").transform.position;
+            particlePos.z -= 3f;
+
             if (changeAmount > 0)
             {
                 _changeAmountIsPositive = true;
+                Instantiate(happyParticles, particlePos, Quaternion.identity);
+                AudioManager.PlaySound(Resources.Load("Reward") as AudioClip);
             } else
             {
                 _changeAmountIsPositive = false;
+                Instantiate(upsetParticles, particlePos, Quaternion.identity);
+                AudioManager.PlaySound(Resources.Load("Rolling a1") as AudioClip);
             }
 
             _increaseBar = true;
@@ -197,6 +206,8 @@ public class RelationshipCanvas : MonoBehaviour
         }
 
         Utilities.SearchChild("Level", this.gameObject).GetComponent<Text>().text = "Lvl: " + level.ToString();
+
+        GameObject.Find("OverallController").GetComponent<OverallGameController>().GetInstructionsCanvas().GetComponent<EscapeMenuManager>().UpdateAllRelationships();
     }
 
     private void Hide()

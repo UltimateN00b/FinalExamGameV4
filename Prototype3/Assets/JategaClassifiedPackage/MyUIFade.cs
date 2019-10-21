@@ -74,12 +74,10 @@ public class MyUIFade : MonoBehaviour {
             if (text)
             {
                 this.GetComponent<Text>().color = myColour;
-                Debug.Log("SHOULD FADE");
             }
             else if (image)
             {
                 this.GetComponent<Image>().color = myColour;
-                Debug.Log("SHOULD FADE");
             }
         }
     }

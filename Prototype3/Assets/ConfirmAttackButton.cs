@@ -86,9 +86,16 @@ public class ConfirmAttackButton : MonoBehaviour
                         //Manage particle effects
                         AudioManager.PlaySound(Resources.Load("Explosions") as AudioClip);
 
-                        GameObject effectsAnimator = Utilities.SearchChild("EffectsAnimator", c.gameObject);
-                        effectsAnimator.GetComponent<SpriteRenderer>().enabled = true;
-                        effectsAnimator.GetComponent<Animator>().enabled = true;
+                        GameObject particles = Resources.Load(_attacks[_attackNum].GetMyType()) as GameObject;
+
+                        Vector3 particlePos = c.transform.position;
+                        particlePos.z -= 3;
+
+                        Instantiate(particles, particlePos, Quaternion.identity);
+
+                        //GameObject effectsAnimator = Utilities.SearchChild("EffectsAnimator", c.gameObject);
+                        //effectsAnimator.GetComponent<SpriteRenderer>().enabled = true;
+                        //effectsAnimator.GetComponent<Animator>().enabled = true;
                     }
                     _hasMovedToAttackPos = true;
 

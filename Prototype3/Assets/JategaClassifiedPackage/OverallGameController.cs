@@ -9,6 +9,7 @@ public class OverallGameController : MonoBehaviour {
 	void Start () {
         _instructionsCanvas = GameObject.Find("InstructionsCanvas");
         _instructionsCanvas.GetComponent<EscapeMenuManager>().UpdateAyandaSleep();
+        _instructionsCanvas.GetComponent<EscapeMenuManager>().UpdateAllRelationships();
         _instructionsCanvas.SetActive(false);
 	}
 	
@@ -40,5 +41,10 @@ public class OverallGameController : MonoBehaviour {
                 }
             }
         }
+    }
+
+    public GameObject GetInstructionsCanvas()
+    {
+        return _instructionsCanvas;
     }
 }

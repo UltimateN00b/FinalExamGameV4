@@ -6,6 +6,12 @@ using UnityEngine.UI;
 public class EscapeMenuManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    public Sprite normalHeart;
+    public Sprite greyHeart;
+    public Sprite brokenHeart;
+
+    public List<Sprite> characterPortraitSprites;
+
     void Start()
     {
         
@@ -61,6 +67,89 @@ public class EscapeMenuManager : MonoBehaviour
         } else
         {
             ayandaPortrait.ChangeSprite("Awakeish");
+        }
+    }
+
+
+    public void UpdateAllRelationships()
+    {
+        foreach (Relationship r in GameObject.Find("RelationshipHolder").GetComponents<Relationship>())
+        {
+            if (r.HasBeenDiscovered())
+            {
+                this.GetComponent<EscapeMenuManager>().UpdateRelationship(r.GetCharacterName(), r.GetCurrLevel());
+            }
+        }
+
+    }
+
+    private void UpdateRelationship(string charName, int level)
+    {
+        GameObject relationships = Utilities.SearchChild("Relationships", this.gameObject);
+
+        GameObject foundRelationship = null;
+
+        for (int i = 0; i < relationships.transform.childCount; i++)
+        {
+
+            if (relationships.transform.GetChild(i).gameObject.name.ToUpper().Contains(charName.ToUpper()))
+            {
+                foundRelationship = relationships.transform.GetChild(i).gameObject;
+            }
+        }
+
+        if (foundRelationship == null)
+        {
+            bool foundEmpty = false;
+
+            for (int i = 0; i < relationships.transform.childCount; i++)
+            {
+                if (!foundEmpty)
+                {
+                    if (relationships.transform.GetChild(i).gameObject.name.Contains("Hearts_Relationship"))
+                    {
+                        foundRelationship = relationships.transform.GetChild(i).gameObject;
+                        foundRelationship.gameObject.name = charName;
+                        foundEmpty = true;
+                    }
+                }
+            }
+        }
+
+        Sprite portraitSprite = null;
+
+        foreach (Sprite s in characterPortraitSprites)
+        {
+            if (s.name.ToUpper().Contains(charName.ToUpper()))
+            {
+                portraitSprite = s;
+            }
+        }
+
+        foundRelationship.GetComponent<EscapeMenuCharacterPortrait>().UpdateCharacterPortrait(portraitSprite);
+
+        UpdateHeartLevel(foundRelationship, level);
+    }
+
+    private void UpdateHeartLevel(GameObject hearts_relationship, int level)
+    {
+        for (int i = 0; i < hearts_relationship.transform.childCount; i++)
+        {
+            hearts_relationship.transform.GetChild(i).GetComponent<Image>().sprite = greyHeart;
+        }
+
+            if (level >= 0)
+        {
+            for (int i = 0; i < level; i++)
+            {
+                hearts_relationship.transform.GetChild(i).GetComponent<Image>().sprite = normalHeart;
+            }
+        } else
+        {
+            for (int i = 0; level > i; i--)
+            {
+                hearts_relationship.transform.GetChild(i).GetComponent<Image>().sprite = brokenHeart;
+            }
         }
     }
 }

@@ -91,6 +91,8 @@ public class RelationshipCanvas : MonoBehaviour
 
                 //Set curr relationship back to null
                 _currRelationship = null;
+
+                GameObject.Find("OverallController").GetComponent<OverallGameController>().GetInstructionsCanvas().GetComponent<EscapeMenuManager>().UpdateAllRelationships();
             }
         }
 
@@ -211,13 +213,16 @@ public class RelationshipCanvas : MonoBehaviour
 
     private void Show()
     {
-        for (int i = 0; i < this.transform.childCount; i++)
-        {
-            this.transform.GetChild(i).GetComponent<MyUIFade>().FadeIn();
-            if (this.transform.GetChild(i).name.Contains("RelationshipBar"))
-            {
-                this.transform.GetChild(i).transform.GetChild(0).GetComponent<MyUIFade>().FadeIn();
-            }
-        }
+        //We keep the old UI hidden.
+
+
+        //for (int i = 0; i < this.transform.childCount; i++)
+        //{
+        //    this.transform.GetChild(i).GetComponent<MyUIFade>().FadeIn();
+        //    if (this.transform.GetChild(i).name.Contains("RelationshipBar"))
+        //    {
+        //        this.transform.GetChild(i).transform.GetChild(0).GetComponent<MyUIFade>().FadeIn();
+        //    }
+        //}
     }
 }

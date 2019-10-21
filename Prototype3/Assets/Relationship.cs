@@ -64,6 +64,7 @@ public class Relationship : MonoBehaviour
 
     public void SetDiscovered()
     {
+        GameObject.Find("OverallController").GetComponent<OverallGameController>().GetInstructionsCanvas().GetComponent<EscapeMenuManager>().UpdateAllRelationships();
         _discovered = true;
     }
 

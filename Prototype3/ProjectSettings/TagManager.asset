@@ -16,6 +16,7 @@ TagManager:
   - Chatbot
   - AudioManager
   - NegativeEventHolder
+  - DiceDiceSelection
   layers:
   - Default
   - TransparentFX

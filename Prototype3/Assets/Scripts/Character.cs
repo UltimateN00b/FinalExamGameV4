@@ -40,11 +40,6 @@ public class Character : MonoBehaviour
                 dice1Type = PlayerDiceHolder.GetDiceType(1);
                 dice2Type = PlayerDiceHolder.GetDiceType(2);
                 dice3Type = PlayerDiceHolder.GetDiceType(3);
-            } else
-            {
-                dice1Type = "Common";
-                dice2Type = "Empty";
-                dice3Type = "Empty";
             }
         }
     }

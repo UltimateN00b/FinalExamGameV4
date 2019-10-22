@@ -45,7 +45,12 @@ public class RelationshipCanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_increaseBar && this.transform.GetChild(0).GetComponent<Image>().color.a >= 1)
+
+        string levelString = Utilities.SearchChild("Level", this.gameObject).GetComponent<Text>().text;
+        levelString = levelString.Substring(levelString.Length - 1);
+        int level = int.Parse(levelString);
+
+        if (_increaseBar)
         {
             GameObject relationshipBar = Utilities.SearchChild("RelationshipBar", this.gameObject);
             if (relationshipBar.GetComponent<Image>().fillAmount < _reachAmount && _changeAmountIsPositive)
@@ -82,9 +87,9 @@ public class RelationshipCanvas : MonoBehaviour
 
 
                 //Update relationship holder
-                string levelString = Utilities.SearchChild("Level", this.gameObject).GetComponent<Text>().text;
+                levelString = Utilities.SearchChild("Level", this.gameObject).GetComponent<Text>().text;
                 levelString = levelString.Substring(levelString.Length - 1);
-                int level = int.Parse(levelString);
+                level = int.Parse(levelString);
                 _currRelationship.SetCurrLevel(level);
                 _currRelationship.SetProgress(relationshipBar.GetComponent<Image>().fillAmount);
 
@@ -112,7 +117,10 @@ public class RelationshipCanvas : MonoBehaviour
                 _fadeTimer = 0.0f;
                 _startWaitBeforeFadeTimer = false;
             }
+
         }
+
+        GameObject.Find("OverallController").GetComponent<OverallGameController>().GetInstructionsCanvas().GetComponent<EscapeMenuManager>().UpdateAllRelationships();
     }
 
     public void SetCurrRelationship(string character)
@@ -142,6 +150,7 @@ public class RelationshipCanvas : MonoBehaviour
             Utilities.SearchChild("Name", this.gameObject).GetComponent<Text>().text = _currRelationship.GetCharacterName();
             Utilities.SearchChild("Level", this.gameObject).GetComponent<Text>().text = "Lvl: "+_currRelationship.GetCurrLevel().ToString();
             Utilities.SearchChild("RelationshipBar", this.gameObject).GetComponent<Image>().fillAmount = _currRelationship.GetProgress();
+            _currRelationship.SetCurrLevel(_currRelationship.GetCurrLevel());
 
             //ShowRelationship
             for (int i = 0; i < this.transform.childCount; i++)
@@ -170,6 +179,8 @@ public class RelationshipCanvas : MonoBehaviour
 
             _increaseBar = true;
         }
+
+        GameObject.Find("OverallController").GetComponent<OverallGameController>().GetInstructionsCanvas().GetComponent<EscapeMenuManager>().UpdateAllRelationships();
     }
 
     private void UpdateLevel()
@@ -206,8 +217,10 @@ public class RelationshipCanvas : MonoBehaviour
         }
 
         Utilities.SearchChild("Level", this.gameObject).GetComponent<Text>().text = "Lvl: " + level.ToString();
+        _currRelationship.SetCurrLevel(level);
 
         GameObject.Find("OverallController").GetComponent<OverallGameController>().GetInstructionsCanvas().GetComponent<EscapeMenuManager>().UpdateAllRelationships();
+        GameObject.Find("CharacterInfoUpdated").GetComponent<BillboardMessage>().ShowMessage();
     }
 
     private void Hide()
@@ -224,7 +237,7 @@ public class RelationshipCanvas : MonoBehaviour
 
     private void Show()
     {
-        //We keep the old UI hidden.
+       // We keep the old UI hidden.
 
 
         //for (int i = 0; i < this.transform.childCount; i++)

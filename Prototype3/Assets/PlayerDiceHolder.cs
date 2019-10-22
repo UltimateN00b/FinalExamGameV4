@@ -14,10 +14,6 @@ public class PlayerDiceHolder : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-
-        dice1 = "Common";
-        dice2 = "Empty";
-        dice3 = "Empty";
     }
 
     // Update is called once per frame

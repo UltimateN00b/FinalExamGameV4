@@ -16,8 +16,9 @@ public class MyImage : MonoBehaviour
     
     private void Start()
     {
-        _fadeIn = false;
-        _fadeOut = false;
+        //_fadeIn = false;
+        //_fadeOut = false;
+
         if (fadeOnStart)
         {
             FadeIn();

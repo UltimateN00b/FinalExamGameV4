@@ -19,7 +19,7 @@ public class Relationship : MonoBehaviour
     {
         _currLevel = 0;
         _currProgressToNextLevel = startingProgressToNextLevel;
-        _discovered = true;
+        _discovered = false;
     }
 
     // Update is called once per frame

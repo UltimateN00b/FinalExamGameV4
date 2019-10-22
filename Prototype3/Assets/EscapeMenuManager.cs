@@ -14,13 +14,13 @@ public class EscapeMenuManager : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void UpdateDay()
@@ -72,7 +72,8 @@ public class EscapeMenuManager : MonoBehaviour
             {
                 ayandaPortrait.ChangeSprite("Awakeish");
             }
-        } else
+        }
+        else
         {
             Debug.Log("SLEEP METER IS NOT IN THIS SCENE!");
         }
@@ -90,7 +91,8 @@ public class EscapeMenuManager : MonoBehaviour
                     this.GetComponent<EscapeMenuManager>().UpdateRelationship(r.GetCharacterName(), r.GetCurrLevel());
                 }
             }
-        } else
+        }
+        else
         {
             Debug.Log("RELATIONSHIP HOLDER IS NOT IN THIS SCENE!");
         }
@@ -152,17 +154,11 @@ public class EscapeMenuManager : MonoBehaviour
             hearts_relationship.transform.GetChild(i).GetComponent<Image>().sprite = greyHeart;
         }
 
-            if (level >= 0)
+        if (level >= 1)
         {
             for (int i = 0; i < level; i++)
             {
                 hearts_relationship.transform.GetChild(i).GetComponent<Image>().sprite = normalHeart;
-            }
-        } else
-        {
-            for (int i = 0; level > i; i--)
-            {
-                hearts_relationship.transform.GetChild(i).GetComponent<Image>().sprite = brokenHeart;
             }
         }
     }

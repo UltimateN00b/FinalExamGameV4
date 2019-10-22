@@ -86,4 +86,9 @@ public class DiceButtonDiceSelection : MonoBehaviour
 
         PlayerDiceHolder.ChangeDice(diceNum, _myDiceName);
     }
+
+    public string GetDiceName()
+    {
+        return _myDiceName;
+    }
 }

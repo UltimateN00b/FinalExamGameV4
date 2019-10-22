@@ -39,7 +39,7 @@ public class TutorialPointChecker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_roundNum == 1)
+        if (NextDaySceneStarter.GetDayNum() == 1)
         {
             if (!_hasShownPoisonDicePopup)
             {
@@ -53,7 +53,7 @@ public class TutorialPointChecker : MonoBehaviour
                 }
             }
         }
-        else if (_roundNum == 2)
+        else if (NextDaySceneStarter.GetDayNum() == 2|| NextDaySceneStarter.GetDayNum() == 3)
         {
             if (!_hasShownLifeStealPopup)
             {
